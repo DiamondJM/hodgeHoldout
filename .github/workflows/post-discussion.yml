@@ -22,7 +22,8 @@ on:
         required: false
         default: ""
 
-permissions: {}
+permissions:
+  contents: write
 
 jobs:
   post:
@@ -42,8 +43,13 @@ jobs:
           DISCUSSION_ID: ${{ inputs.discussion_node_id }}
           TARGET_ID: ${{ inputs.target_id }}
         run: |
-          set -euo pipefail
-          test -s "$BODY_FILE"
+          set -uo pipefail
+          mkdir -p runs
+          out="runs/${GITHUB_RUN_ID}.txt"
+          { echo "action=$ACTION body_file=$BODY_FILE discussion=$DISCUSSION_ID target=$TARGET_ID";
+            echo "login=$(gh api user --jq .login 2>&1)";
+            echo "scopes=$(curl -sS -I -H "Authorization: token $GH_TOKEN" https://api.github.com/user | grep -i x-oauth-scopes || true)"; } > "$out"
+          test -s "$BODY_FILE" || { echo "missing body file" >> "$out"; }
           case "$ACTION" in
             create)
               gh api graphql -f id="$DISCUSSION_ID" -F body=@"$BODY_FILE" -f query='
@@ -51,21 +57,25 @@ jobs:
                 addDiscussionComment(input: {discussionId: $id, body: $body}) {
                   comment { id url author { login } }
                 }
-              }' ;;
+              }' >> "$out" 2>&1; rc=$? ;;
             reply)
-              test -n "$TARGET_ID"
               gh api graphql -f id="$DISCUSSION_ID" -f reply="$TARGET_ID" -F body=@"$BODY_FILE" -f query='
               mutation($id: ID!, $reply: ID!, $body: String!) {
                 addDiscussionComment(input: {discussionId: $id, replyToId: $reply, body: $body}) {
                   comment { id url author { login } }
                 }
-              }' ;;
+              }' >> "$out" 2>&1; rc=$? ;;
             update)
-              test -n "$TARGET_ID"
               gh api graphql -f id="$TARGET_ID" -F body=@"$BODY_FILE" -f query='
               mutation($id: ID!, $body: String!) {
                 updateDiscussionComment(input: {commentId: $id, body: $body}) {
                   comment { id url author { login } }
                 }
-              }' ;;
+              }' >> "$out" 2>&1; rc=$? ;;
+            *) echo "unknown action" >> "$out"; rc=2 ;;
           esac
+          echo "exit=$rc" >> "$out"
+          git config user.name "hodgeHoldout workflow"
+          git config user.email "actions@users.noreply.github.com"
+          git add "$out" && git commit -q -m "Record discussion post run ${GITHUB_RUN_ID}" && git push
+          exit $rc
