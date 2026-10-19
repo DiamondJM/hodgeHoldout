@@ -1,0 +1,120 @@
+name: Lean-check a proposal folder against hodge-computer/sextics
+
+on:
+  workflow_dispatch:
+    inputs:
+      instance:
+        description: Instance id (data/<instance> in sextics)
+        required: true
+        default: holdout-x13-y13
+      proposal_dir:
+        description: Folder in this repository with the proposal files (default proposals/<instance>; "none" skips staging)
+        required: false
+        default: ""
+      sextics_ref:
+        description: hodge-computer/sextics commit or branch to check against
+        required: false
+        default: main
+      official:
+        description: Also run the official docker verifier after a successful compile (yes/no)
+        required: false
+        default: "no"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clone sextics
+        run: |
+          git clone https://github.com/hodge-computer/sextics "$HOME/sextics"
+          cd "$HOME/sextics" && git checkout --quiet "${{ inputs.sextics_ref }}" && git rev-parse HEAD
+      - name: Install the pinned Lean toolchain
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch the Mathlib cache and build the verifier library
+        run: |
+          cd "$HOME/sextics/formal/lean"
+          lake exe cache get
+          lake build HodgeComputer.Verify
+      - name: Python dependencies
+        run: python3 -m pip install --quiet pyyaml
+      - name: Stage the proposal into the instance folder
+        env:
+          INSTANCE: ${{ inputs.instance }}
+          DIR: ${{ inputs.proposal_dir }}
+        run: |
+          if [ "$DIR" = "none" ]; then echo "staging skipped"; exit 0; fi
+          [ -z "$DIR" ] && DIR="proposals/$INSTANCE"
+          dest="$HOME/sextics/data/$INSTANCE"
+          ls "$dest" | head -5
+          for f in "$DIR"/*; do b=$(basename "$f"); [ -e "$dest/$b" ] && echo "overwriting existing $b"; done
+          cp -f "$DIR"/* "$dest"/
+          [ -f "$dest/solution.md" ] || printf '# placeholder\n\nCompile check only.\n' > "$dest/solution.md"
+          ls "$dest" | wc -l
+      - name: Compile
+        id: compile
+        env:
+          INSTANCE: ${{ inputs.instance }}
+        run: |
+          set +e
+          python3 tools/lean_compile.py "$HOME/sextics" "$INSTANCE" /tmp/summary.txt > /tmp/compile.log 2>&1
+          rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          tail -60 /tmp/compile.log
+          exit 0
+      - name: Official verifier
+        id: official
+        if: inputs.official == 'yes' && steps.compile.outputs.rc == '0'
+        env:
+          INSTANCE: ${{ inputs.instance }}
+        run: |
+          set +e
+          cd "$HOME/sextics"
+          python3 - <<'PY' > /tmp/official.log 2>&1
+          import json, os, sys, tempfile
+          from pathlib import Path
+          import yaml
+          sys.path.insert(0, "scripts/proposals")
+          from acceptance import accepted_sources
+          from check import ROOT, module_order
+          from sandbox import verify
+          instance_id = os.environ["INSTANCE"]
+          folder = ROOT / "data" / instance_id
+          files = {name: (folder / name).read_bytes() for name in accepted_sources(folder)}
+          manifest = json.loads(files["proof.json"])
+          instance = yaml.safe_load((folder / "instance.rec").read_text())
+          policy = json.loads((ROOT / ".github/solve-policy.json").read_text())
+          order, imports = module_order(files)
+          logs = Path(tempfile.mkdtemp(prefix="hodge-proof-check-"))
+          print(f"Verification logs: {logs}", flush=True)
+          print(json.dumps(verify(ROOT, files, instance, manifest, order, imports, policy, logs), indent=2))
+          PY
+          rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          tail -40 /tmp/official.log
+          exit 0
+      - name: Record outcome as an issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INSTANCE: ${{ inputs.instance }}
+        run: |
+          title="lean-check ${INSTANCE} run ${GITHUB_RUN_ID}: compile rc=${{ steps.compile.outputs.rc }} official rc=${{ steps.official.outputs.rc }}"
+          {
+            echo "sextics ref: ${{ inputs.sextics_ref }}  proposal_dir: ${{ inputs.proposal_dir }}"
+            echo '```'
+            if [ -f /tmp/summary.txt ]; then head -c 55000 /tmp/summary.txt; else echo "no summary; compile log tail:"; tail -c 20000 /tmp/compile.log; fi
+            echo '```'
+            if [ -f /tmp/official.log ]; then echo 'official verifier:'; echo '```'; tail -c 6000 /tmp/official.log; echo '```'; fi
+          } > /tmp/issue-body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file /tmp/issue-body.md
+      - name: Fail if the compile failed
+        if: steps.compile.outputs.rc != '0'
+        run: exit 1
