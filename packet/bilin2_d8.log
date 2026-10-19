@@ -1,0 +1,1347 @@
+=== START d=8 chars=648 nproc=3
+d=8 ch=(0, 0, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(0, 0, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(0, 0, 0, 0, 0, 2): nN=72 nD=12 nH=20 r=18 quadrics=63/102 build=0.1s
+  annihilator charts: 8 (of 11 forms)
+d=8 ch=(0, 0, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 1, 1): nN=85 nD=12 nH=20 r=25 quadrics=85/102 build=0.0s
+  annihilator charts: 10 (of 11 forms)
+d=8 ch=(0, 0, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(0, 0, 0, 0, 0, 2) total 0.1s
+d=8 ch=(0, 0, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 2, 0): nN=108 nD=15 nH=26 r=38 quadrics=102/115 build=0.1s
+  annihilator charts: 12 (of 14 forms)
+  chart 7: empty (0.0s)
+  chart 8: empty (0.0s)
+  chart 9: empty (0.0s)
+  done ch=(0, 0, 0, 0, 1, 1) total 0.2s
+d=8 ch=(0, 0, 0, 0, 3, 5): nN=94 nD=10 nH=20 r=29 quadrics=92/102 build=0.1s
+  annihilator charts: 9 (of 10 forms)
+d=8 ch=(0, 0, 0, 0, 4, 0): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 4, 4): nN=72 nD=12 nH=20 r=18 quadrics=79/102 build=0.0s
+  annihilator charts: 8 (of 11 forms)
+  chart 5: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 7: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 8: empty (0.0s)
+  done ch=(0, 0, 0, 0, 3, 5) total 0.2s
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+d=8 ch=(0, 0, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(0, 0, 0, 0, 4, 4) total 0.1s
+d=8 ch=(0, 0, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(0, 0, 0, 0, 5, 3): nN=70 nD=8 nH=26 r=15 quadrics=101/115 build=0.1s
+  annihilator charts: 7 (of 8 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(0, 1, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(0, 1, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  done ch=(0, 0, 0, 0, 5, 3) total 0.1s
+d=8 ch=(0, 1, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(0, 1, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 0, 0): nN=87 nD=14 nH=26 r=25 quadrics=108/114 build=0.1s
+  annihilator charts: 13 (of 13 forms)
+d=8 ch=(0, 2, 0, 0, 1, 5): nN=82 nD=8 nH=19 r=23 quadrics=94/99 build=0.0s
+  annihilator charts: 8 (of 8 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 0: empty (0.1s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(0, 2, 0, 0, 1, 5) total 0.1s
+  chart 2: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 2, 4): nN=71 nD=8 nH=19 r=15 quadrics=85/98 build=0.0s
+  annihilator charts: 7 (of 8 forms)
+  chart 5: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 7: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  done ch=(0, 2, 0, 0, 2, 4) total 0.1s
+  chart 8: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 9: empty (0.0s)
+  chart 10: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 3, 3): nN=64 nD=7 nH=26 r=10 quadrics=77/114 build=0.0s
+  annihilator charts: 6 (of 7 forms)
+  chart 11: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 12: empty (0.0s)
+  done ch=(0, 2, 0, 0, 0, 0) total 0.3s
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  done ch=(0, 2, 0, 0, 3, 3) total 0.1s
+d=8 ch=(0, 2, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(0, 2, 0, 0, 4, 2): nN=71 nD=8 nH=19 r=15 quadrics=90/98 build=0.0s
+  annihilator charts: 7 (of 8 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 5, 1): nN=76 nD=9 nH=19 r=20 quadrics=91/99 build=0.0s
+  annihilator charts: 9 (of 9 forms)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 6: empty (0.0s)
+  done ch=(0, 2, 0, 0, 4, 2) total 0.1s
+  chart 3: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 5, 3): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+d=8 ch=(0, 2, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+d=8 ch=(0, 3, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 8: empty (0.0s)
+  done ch=(0, 2, 0, 0, 5, 1) total 0.1s
+d=8 ch=(0, 3, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(0, 3, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 0, 4): nN=71 nD=8 nH=16 r=13 quadrics=58/96 build=0.0s
+  annihilator charts: 6 (of 8 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  done ch=(0, 4, 0, 0, 0, 4) total 0.1s
+d=8 ch=(0, 4, 0, 0, 1, 3): nN=64 nD=7 nH=29 r=9 quadrics=100/117 build=0.0s
+  annihilator charts: 7 (of 7 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(0, 4, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(0, 4, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 0: empty (1.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  done ch=(0, 4, 0, 0, 1, 3) total 0.1s
+d=8 ch=(0, 4, 0, 0, 2, 2): nN=71 nD=8 nH=16 r=13 quadrics=70/96 build=0.0s
+  annihilator charts: 6 (of 8 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(0, 4, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  done ch=(0, 4, 0, 0, 2, 2) total 0.1s
+d=8 ch=(0, 4, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 3, 1): nN=94 nD=9 nH=16 r=28 quadrics=87/96 build=0.0s
+  annihilator charts: 8 (of 9 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(0, 4, 0, 0, 3, 1) total 0.1s
+d=8 ch=(0, 4, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 4, 0): nN=102 nD=15 nH=29 r=34 quadrics=110/117 build=0.1s
+  annihilator charts: 13 (of 14 forms)
+d=8 ch=(0, 4, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(0, 4, 0, 0, 5, 5): nN=79 nD=12 nH=16 r=21 quadrics=78/95 build=0.0s
+  annihilator charts: 10 (of 11 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 0: empty (0.1s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  chart 8: empty (0.0s)
+  chart 9: empty (0.0s)
+  done ch=(0, 4, 0, 0, 5, 5) total 0.1s
+d=8 ch=(0, 5, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 1: empty (0.1s)
+d=8 ch=(0, 5, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(0, 5, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(0, 5, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+d=8 ch=(0, 5, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+d=8 ch=(0, 5, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(0, 5, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 6: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 7: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 1: empty (0.5s)
+d=8 ch=(1, 0, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 8: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 9: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 10: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 2: empty (0.1s)
+  chart 11: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 12: empty (0.0s)
+  done ch=(0, 4, 0, 0, 4, 0) total 0.6s
+d=8 ch=(1, 0, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(1, 0, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+d=8 ch=(1, 0, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(1, 1, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 0, 0): nN=62 nD=11 nH=11 r=14 quadrics=50/69 build=0.0s
+  annihilator charts: 9 (of 10 forms)
+d=8 ch=(1, 1, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 7: empty (0.0s)
+  chart 6: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 1, 5): nN=60 nD=6 nH=8 r=13 quadrics=58/60 build=0.0s
+  annihilator charts: 6 (of 6 forms)
+  chart 7: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 8: empty (0.0s)
+  done ch=(1, 1, 0, 0, 0, 0) total 0.1s
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 8: empty (0.0s)
+  chart 3: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  done ch=(1, 1, 0, 0, 1, 5) total 0.1s
+d=8 ch=(1, 1, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 9: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(1, 1, 0, 0, 2, 4): nN=47 nD=5 nH=8 r=6 quadrics=21/58 build=0.0s
+  annihilator charts: 3 (of 5 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 3, 3): excluded (E1)  r=1
+  chart 2: empty (0.0s)
+  done ch=(1, 1, 0, 0, 2, 4) total 0.0s
+  chart 10: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(1, 1, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(1, 1, 0, 0, 4, 4): excluded (E1)  r=0
+  chart 11: empty (0.0s)
+  done ch=(0, 0, 0, 0, 2, 0) total 2.0s
+d=8 ch=(1, 1, 0, 0, 4, 2): nN=47 nD=5 nH=8 r=6 quadrics=21/58 build=0.0s
+  annihilator charts: 3 (of 5 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  done ch=(1, 1, 0, 0, 4, 2) total 0.0s
+d=8 ch=(1, 1, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(1, 1, 0, 0, 5, 1): nN=54 nD=7 nH=8 r=10 quadrics=50/60 build=0.0s
+  annihilator charts: 6 (of 7 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(1, 1, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(1, 2, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(1, 2, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(1, 2, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  done ch=(1, 1, 0, 0, 5, 1) total 0.1s
+d=8 ch=(1, 2, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(1, 2, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(1, 3, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(1, 3, 0, 0, 0, 4): nN=50 nD=5 nH=8 r=8 quadrics=20/60 build=0.0s
+  annihilator charts: 3 (of 5 forms)
+d=8 ch=(1, 3, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(1, 3, 0, 0, 0, 4) total 0.0s
+d=8 ch=(1, 3, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(1, 3, 0, 0, 1, 3): nN=46 nD=5 nH=15 r=6 quadrics=14/76 build=0.0s
+  annihilator charts: 2 (of 5 forms)
+d=8 ch=(1, 3, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(1, 3, 0, 0, 1, 3) total 0.0s
+d=8 ch=(1, 3, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(1, 3, 0, 0, 2, 2): nN=50 nD=5 nH=8 r=8 quadrics=20/60 build=0.0s
+  annihilator charts: 3 (of 5 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(1, 3, 0, 0, 2, 2) total 0.0s
+d=8 ch=(1, 3, 0, 0, 3, 1): nN=72 nD=7 nH=8 r=20 quadrics=34/61 build=0.0s
+  annihilator charts: 4 (of 7 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 4, 4): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  done ch=(1, 3, 0, 0, 3, 1) total 0.0s
+d=8 ch=(1, 3, 0, 0, 4, 0): nN=77 nD=9 nH=15 r=22 quadrics=60/76 build=0.0s
+  annihilator charts: 8 (of 9 forms)
+d=8 ch=(1, 3, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 5, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(1, 3, 0, 0, 5, 5): nN=57 nD=10 nH=8 r=13 quadrics=36/58 build=0.0s
+  annihilator charts: 8 (of 9 forms)
+  chart 3: empty (0.0s)
+d=8 ch=(1, 4, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 5: empty (0.0s)
+d=8 ch=(1, 4, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(1, 3, 0, 0, 4, 0) total 0.1s
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+d=8 ch=(1, 4, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 7: empty (0.0s)
+  done ch=(1, 3, 0, 0, 5, 5) total 0.1s
+d=8 ch=(1, 4, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(1, 5, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(1, 4, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(1, 5, 0, 0, 0, 2): nN=41 nD=5 nH=8 r=4 quadrics=26/58 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+d=8 ch=(1, 5, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(1, 5, 0, 0, 0, 2) total 0.0s
+d=8 ch=(1, 5, 0, 0, 1, 1): nN=51 nD=6 nH=8 r=7 quadrics=46/60 build=0.0s
+  annihilator charts: 6 (of 6 forms)
+d=8 ch=(1, 5, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 2, 0): nN=65 nD=7 nH=14 r=16 quadrics=65/72 build=0.0s
+  annihilator charts: 7 (of 7 forms)
+  chart 4: empty (0.0s)
+  chart 0: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  done ch=(1, 5, 0, 0, 1, 1) total 0.1s
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  done ch=(1, 5, 0, 0, 2, 0) total 0.1s
+d=8 ch=(1, 5, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(1, 5, 0, 0, 3, 5): nN=56 nD=6 nH=8 r=13 quadrics=43/60 build=0.0s
+  annihilator charts: 5 (of 6 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 4, 4): nN=41 nD=5 nH=8 r=4 quadrics=32/58 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 4: empty (0.0s)
+  done ch=(1, 5, 0, 0, 3, 5) total 0.1s
+d=8 ch=(1, 5, 0, 0, 5, 3): nN=42 nD=5 nH=14 r=4 quadrics=33/72 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 0: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(1, 5, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(1, 5, 0, 0, 4, 4) total 0.0s
+  chart 3: empty (0.0s)
+  done ch=(1, 5, 0, 0, 5, 3) total 0.0s
+d=8 ch=(2, 0, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 0, 0): nN=56 nD=10 nH=18 r=16 quadrics=68/89 build=0.0s
+  annihilator charts: 8 (of 9 forms)
+d=8 ch=(2, 0, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(2, 0, 0, 0, 1, 5): nN=52 nD=4 nH=11 r=14 quadrics=46/73 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+d=8 ch=(2, 0, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(2, 0, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(2, 0, 0, 0, 1, 5) total 0.0s
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(2, 0, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 2, 4): excluded (E1)  r=7
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(2, 0, 0, 0, 0, 0) total 0.1s
+d=8 ch=(2, 0, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 3, 3): excluded (E1)  r=2
+d=8 ch=(2, 0, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 4, 2): excluded (E1)  r=7
+d=8 ch=(2, 0, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(2, 0, 0, 0, 5, 1): nN=46 nD=5 nH=11 r=10 quadrics=46/74 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(2, 0, 0, 0, 5, 3): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(2, 0, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  done ch=(2, 0, 0, 0, 5, 1) total 0.0s
+d=8 ch=(2, 1, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(2, 1, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 0, 4): nN=38 nD=3 nH=10 r=7 quadrics=19/68 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+d=8 ch=(2, 2, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 1, 3): excluded (E1)  r=4
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(2, 2, 0, 0, 0, 4) total 0.0s
+d=8 ch=(2, 2, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 2, 2): nN=38 nD=3 nH=10 r=7 quadrics=19/68 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(2, 2, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  done ch=(2, 2, 0, 0, 2, 2) total 0.0s
+d=8 ch=(2, 2, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 3, 1): nN=48 nD=3 nH=10 r=14 quadrics=42/68 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(2, 2, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  done ch=(2, 2, 0, 0, 3, 1) total 0.0s
+d=8 ch=(2, 2, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 4, 0): nN=54 nD=6 nH=17 r=17 quadrics=73/87 build=0.0s
+  annihilator charts: 6 (of 6 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(2, 2, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 5, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(2, 3, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(2, 2, 0, 0, 5, 5): nN=39 nD=4 nH=10 r=7 quadrics=48/69 build=0.0s
+  annihilator charts: 4 (of 4 forms)
+  chart 3: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(2, 3, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  done ch=(2, 2, 0, 0, 4, 0) total 0.1s
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(2, 2, 0, 0, 5, 5) total 0.0s
+d=8 ch=(2, 3, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(2, 3, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(2, 4, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(2, 4, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(2, 4, 0, 0, 0, 2): nN=35 nD=4 nH=13 r=3 quadrics=27/72 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 1, 1): nN=42 nD=4 nH=13 r=7 quadrics=52/71 build=0.0s
+  annihilator charts: 4 (of 4 forms)
+  chart 2: empty (0.0s)
+  done ch=(2, 4, 0, 0, 0, 2) total 0.0s
+  chart 0: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(2, 4, 0, 0, 1, 1) total 0.0s
+d=8 ch=(2, 4, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(2, 4, 0, 0, 2, 0): nN=58 nD=5 nH=17 r=17 quadrics=78/86 build=0.0s
+  annihilator charts: 5 (of 5 forms)
+d=8 ch=(2, 4, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(2, 4, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 4, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 3, 5): nN=45 nD=4 nH=13 r=11 quadrics=49/72 build=0.0s
+  annihilator charts: 4 (of 4 forms)
+d=8 ch=(2, 4, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  done ch=(2, 4, 0, 0, 2, 0) total 0.1s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 4, 4): nN=35 nD=4 nH=13 r=3 quadrics=27/72 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+  chart 2: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(2, 4, 0, 0, 3, 5) total 0.0s
+  chart 1: empty (0.0s)
+d=8 ch=(2, 4, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(2, 4, 0, 0, 4, 4) total 0.0s
+d=8 ch=(2, 4, 0, 0, 5, 3): excluded (E1)  r=2
+d=8 ch=(2, 5, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(2, 4, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(2, 5, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(3, 0, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 0, 4): nN=61 nD=6 nH=16 r=12 quadrics=69/96 build=0.0s
+  annihilator charts: 5 (of 6 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(3, 1, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 1, 3): nN=59 nD=6 nH=29 r=11 quadrics=78/117 build=0.0s
+  annihilator charts: 5 (of 6 forms)
+  chart 1: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(3, 1, 0, 0, 2, 2): nN=61 nD=6 nH=16 r=12 quadrics=74/96 build=0.0s
+  annihilator charts: 5 (of 6 forms)
+  chart 4: empty (0.0s)
+  done ch=(3, 1, 0, 0, 0, 4) total 0.1s
+  chart 2: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 4: empty (0.0s)
+  done ch=(3, 1, 0, 0, 1, 3) total 0.1s
+d=8 ch=(3, 1, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+d=8 ch=(3, 1, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  done ch=(3, 1, 0, 0, 2, 2) total 0.0s
+d=8 ch=(3, 1, 0, 0, 3, 1): nN=77 nD=7 nH=16 r=22 quadrics=69/96 build=0.0s
+  annihilator charts: 6 (of 7 forms)
+d=8 ch=(3, 1, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(3, 1, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+d=8 ch=(3, 1, 0, 0, 4, 4): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+  done ch=(3, 1, 0, 0, 3, 1) total 0.1s
+d=8 ch=(3, 1, 0, 0, 4, 0): nN=82 nD=10 nH=29 r=25 quadrics=106/117 build=0.1s
+d=8 ch=(3, 1, 0, 0, 5, 1): excluded (E1)  r=0
+  annihilator charts: 10 (of 10 forms)
+d=8 ch=(3, 1, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(3, 2, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(3, 2, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(3, 2, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(3, 1, 0, 0, 5, 5): nN=68 nD=8 nH=16 r=16 quadrics=90/96 build=0.0s
+  annihilator charts: 8 (of 8 forms)
+d=8 ch=(3, 2, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 0: empty (0.1s)
+  chart 2: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 5: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 6: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 7: empty (0.0s)
+  done ch=(3, 1, 0, 0, 5, 5) total 0.1s
+d=8 ch=(3, 2, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(3, 2, 0, 0, 4, 0): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(3, 2, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 5: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(3, 2, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 6: empty (0.0s)
+d=8 ch=(3, 2, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(3, 3, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 7: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 8: empty (0.0s)
+  chart 9: empty (0.0s)
+  done ch=(3, 1, 0, 0, 4, 0) total 0.2s
+d=8 ch=(3, 3, 0, 0, 0, 2): nN=61 nD=7 nH=20 r=7 quadrics=48/102 build=0.0s
+  annihilator charts: 5 (of 7 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  chart 4: empty (0.0s)
+  done ch=(3, 3, 0, 0, 0, 2) total 0.0s
+d=8 ch=(3, 3, 0, 0, 1, 1): nN=77 nD=9 nH=20 r=18 quadrics=92/102 build=0.0s
+  annihilator charts: 9 (of 9 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(3, 3, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 2, 0): nN=100 nD=10 nH=26 r=30 quadrics=97/115 build=0.1s
+  annihilator charts: 9 (of 10 forms)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 8: empty (0.0s)
+  done ch=(3, 3, 0, 0, 1, 1) total 0.1s
+  chart 1: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 3, 5): nN=80 nD=9 nH=20 r=22 quadrics=98/102 build=0.1s
+  annihilator charts: 9 (of 9 forms)
+d=8 ch=(3, 3, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(3, 3, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 4, 4): nN=61 nD=7 nH=20 r=7 quadrics=55/102 build=0.0s
+  annihilator charts: 5 (of 7 forms)
+  chart 4: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 4: empty (0.0s)
+  done ch=(3, 3, 0, 0, 4, 4) total 0.0s
+  chart 4: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 6: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 7: empty (0.0s)
+  chart 7: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 5, 3): nN=59 nD=7 nH=26 r=5 quadrics=70/115 build=0.0s
+  annihilator charts: 4 (of 7 forms)
+  chart 0: empty (0.0s)
+  chart 8: empty (0.0s)
+  done ch=(3, 3, 0, 0, 2, 0) total 0.2s
+  chart 8: empty (0.0s)
+  done ch=(3, 3, 0, 0, 3, 5) total 0.1s
+  chart 1: empty (0.0s)
+d=8 ch=(3, 3, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(3, 4, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  done ch=(3, 3, 0, 0, 5, 3) total 0.0s
+d=8 ch=(3, 4, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(3, 4, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 1, 5): nN=86 nD=8 nH=19 r=24 quadrics=74/99 build=0.0s
+  annihilator charts: 5 (of 8 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(3, 5, 0, 0, 2, 4): nN=64 nD=6 nH=19 r=14 quadrics=44/98 build=0.0s
+  annihilator charts: 4 (of 6 forms)
+  chart 0: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(3, 5, 0, 0, 0, 0): nN=85 nD=13 nH=26 r=26 quadrics=90/114 build=0.1s
+  annihilator charts: 11 (of 12 forms)
+  chart 1: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 4: empty (0.0s)
+  done ch=(3, 5, 0, 0, 1, 5) total 0.1s
+  chart 3: empty (0.0s)
+  done ch=(3, 5, 0, 0, 2, 4) total 0.0s
+d=8 ch=(3, 5, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(3, 5, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 3, 3): nN=59 nD=6 nH=26 r=9 quadrics=70/114 build=0.0s
+  annihilator charts: 3 (of 6 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(3, 5, 0, 0, 4, 2): nN=64 nD=6 nH=19 r=14 quadrics=50/98 build=0.0s
+  annihilator charts: 4 (of 6 forms)
+  chart 2: empty (0.0s)
+  done ch=(3, 5, 0, 0, 3, 3) total 0.0s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(3, 5, 0, 0, 4, 4): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  done ch=(3, 5, 0, 0, 4, 2) total 0.0s
+d=8 ch=(3, 5, 0, 0, 5, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(3, 5, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(4, 0, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(3, 5, 0, 0, 5, 1): nN=74 nD=11 nH=19 r=21 quadrics=62/98 build=0.0s
+  annihilator charts: 9 (of 10 forms)
+d=8 ch=(4, 0, 0, 0, 0, 4): nN=42 nD=5 nH=8 r=3 quadrics=19/60 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 3: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 4: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(4, 0, 0, 0, 0, 4) total 0.0s
+d=8 ch=(4, 0, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 1, 3): nN=38 nD=4 nH=15 r=2 quadrics=5/74 build=0.0s
+  annihilator charts: 2 (of 4 forms)
+  chart 0: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 3: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(4, 0, 0, 0, 1, 3) total 0.0s
+  chart 4: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 7: empty (0.0s)
+  chart 5: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 8: empty (0.0s)
+  chart 6: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 2, 2): nN=42 nD=5 nH=8 r=3 quadrics=19/60 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 7: empty (0.0s)
+  chart 9: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 8: empty (0.0s)
+  done ch=(3, 5, 0, 0, 5, 1) total 0.1s
+  chart 2: empty (0.0s)
+  chart 10: empty (0.0s)
+  done ch=(3, 5, 0, 0, 0, 0) total 0.3s
+  chart 3: empty (0.0s)
+  done ch=(4, 0, 0, 0, 2, 2) total 0.0s
+d=8 ch=(4, 0, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(4, 0, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(4, 0, 0, 0, 3, 1): nN=53 nD=5 nH=8 r=10 quadrics=42/59 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  done ch=(4, 0, 0, 0, 3, 1) total 0.0s
+d=8 ch=(4, 0, 0, 0, 4, 0): nN=58 nD=8 nH=15 r=13 quadrics=69/75 build=0.0s
+  annihilator charts: 8 (of 8 forms)
+d=8 ch=(4, 0, 0, 0, 4, 4): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 5, 3): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(4, 0, 0, 0, 5, 5): nN=46 nD=6 nH=8 r=6 quadrics=35/61 build=0.0s
+  annihilator charts: 5 (of 6 forms)
+  chart 4: empty (0.0s)
+  chart 0: empty (0.0s)
+d=8 ch=(4, 1, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 5: empty (0.0s)
+  chart 2: empty (0.0s)
+  chart 6: empty (0.0s)
+  chart 3: empty (0.0s)
+d=8 ch=(4, 1, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  chart 7: empty (0.0s)
+  done ch=(4, 0, 0, 0, 5, 5) total 0.0s
+  done ch=(4, 0, 0, 0, 4, 0) total 0.1s
+d=8 ch=(4, 1, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(4, 1, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(4, 2, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(4, 2, 0, 0, 0, 2): nN=39 nD=4 nH=8 r=3 quadrics=9/57 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+d=8 ch=(4, 2, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  done ch=(4, 2, 0, 0, 0, 2) total 0.0s
+d=8 ch=(4, 2, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(4, 2, 0, 0, 1, 1): nN=50 nD=5 nH=8 r=10 quadrics=30/59 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+d=8 ch=(4, 2, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(4, 2, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(4, 2, 0, 0, 2, 4): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+  done ch=(4, 2, 0, 0, 1, 1) total 0.0s
+d=8 ch=(4, 2, 0, 0, 2, 0): nN=75 nD=7 nH=14 r=20 quadrics=39/73 build=0.0s
+  annihilator charts: 4 (of 7 forms)
+d=8 ch=(4, 2, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(4, 2, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(4, 2, 0, 0, 3, 5): nN=53 nD=5 nH=8 r=13 quadrics=33/59 build=0.0s
+  annihilator charts: 4 (of 5 forms)
+  chart 3: empty (0.0s)
+  done ch=(4, 2, 0, 0, 2, 0) total 0.0s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(4, 2, 0, 0, 4, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(4, 2, 0, 0, 3, 5) total 0.0s
+d=8 ch=(4, 2, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(4, 2, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(4, 2, 0, 0, 4, 4): nN=39 nD=4 nH=8 r=3 quadrics=9/57 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+d=8 ch=(4, 2, 0, 0, 5, 3): excluded (E1)  r=2
+  chart 0: empty (0.0s)
+d=8 ch=(4, 2, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(4, 3, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(4, 2, 0, 0, 4, 4) total 0.0s
+d=8 ch=(4, 3, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(4, 3, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(4, 4, 0, 0, 0, 0): nN=56 nD=7 nH=11 r=11 quadrics=59/70 build=0.0s
+  annihilator charts: 7 (of 7 forms)
+d=8 ch=(4, 4, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(4, 4, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(4, 4, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(4, 4, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  chart 5: empty (0.0s)
+d=8 ch=(4, 4, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(4, 4, 0, 0, 1, 5): nN=50 nD=4 nH=8 r=10 quadrics=31/59 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+  chart 6: empty (0.0s)
+  done ch=(4, 4, 0, 0, 0, 0) total 0.1s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(4, 4, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(4, 4, 0, 0, 1, 5) total 0.0s
+d=8 ch=(4, 4, 0, 0, 2, 4): nN=42 nD=3 nH=8 r=7 quadrics=15/57 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(4, 4, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  done ch=(4, 4, 0, 0, 2, 4) total 0.0s
+d=8 ch=(4, 4, 0, 0, 3, 3): nN=35 nD=3 nH=11 r=4 quadrics=20/70 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+d=8 ch=(4, 4, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(4, 4, 0, 0, 3, 3) total 0.0s
+d=8 ch=(4, 4, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(4, 4, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(4, 4, 0, 0, 4, 2): nN=42 nD=3 nH=8 r=7 quadrics=15/57 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+d=8 ch=(4, 4, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(4, 4, 0, 0, 5, 1): nN=46 nD=5 nH=8 r=10 quadrics=38/59 build=0.0s
+  annihilator charts: 5 (of 5 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(4, 4, 0, 0, 4, 2) total 0.0s
+  chart 0: empty (0.0s)
+d=8 ch=(4, 4, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(4, 5, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 0, 0): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+d=8 ch=(4, 5, 0, 0, 0, 4): excluded (E1)  r=0
+  chart 3: empty (0.0s)
+d=8 ch=(4, 5, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 1, 1): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  done ch=(4, 4, 0, 0, 5, 1) total 0.0s
+d=8 ch=(4, 5, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(4, 5, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(5, 1, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(5, 0, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(5, 1, 0, 0, 0, 2): nN=30 nD=2 nH=13 r=5 quadrics=26/66 build=0.0s
+  annihilator charts: 2 (of 2 forms)
+d=8 ch=(5, 1, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(5, 1, 0, 0, 1, 3): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 1, 0, 0, 0, 2) total 0.0s
+d=8 ch=(5, 1, 0, 0, 1, 1): nN=43 nD=3 nH=13 r=11 quadrics=39/72 build=0.0s
+  annihilator charts: 3 (of 3 forms)
+d=8 ch=(5, 1, 0, 0, 1, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(5, 1, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+  done ch=(5, 1, 0, 0, 1, 1) total 0.0s
+d=8 ch=(5, 1, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(5, 1, 0, 0, 2, 0): nN=58 nD=4 nH=17 r=19 quadrics=57/86 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+d=8 ch=(5, 1, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(5, 1, 0, 0, 3, 3): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(5, 1, 0, 0, 4, 0): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(5, 1, 0, 0, 3, 5): nN=46 nD=3 nH=13 r=14 quadrics=30/71 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+  chart 2: empty (0.0s)
+  done ch=(5, 1, 0, 0, 2, 0) total 0.0s
+d=8 ch=(5, 1, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 1, 0, 0, 3, 5) total 0.0s
+d=8 ch=(5, 1, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(5, 1, 0, 0, 4, 4): nN=30 nD=2 nH=13 r=5 quadrics=22/66 build=0.0s
+  annihilator charts: 2 (of 2 forms)
+d=8 ch=(5, 1, 0, 0, 5, 3): excluded (E1)  r=4
+  chart 0: empty (0.0s)
+d=8 ch=(5, 1, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  done ch=(5, 1, 0, 0, 4, 4) total 0.0s
+d=8 ch=(5, 2, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(5, 2, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 0, 0): nN=51 nD=5 nH=18 r=12 quadrics=72/89 build=0.0s
+d=8 ch=(5, 3, 0, 0, 1, 3): excluded (E1)  r=0
+  annihilator charts: 5 (of 5 forms)
+d=8 ch=(5, 3, 0, 0, 2, 0): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(5, 3, 0, 0, 2, 2): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+d=8 ch=(5, 3, 0, 0, 1, 5): nN=47 nD=3 nH=11 r=11 quadrics=47/73 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+  chart 0: empty (0.0s)
+d=8 ch=(5, 3, 0, 0, 2, 4): excluded (E1)  r=8
+  chart 2: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 3, 0, 0, 1, 5) total 0.0s
+  chart 3: empty (0.0s)
+d=8 ch=(5, 3, 0, 0, 3, 1): excluded (E1)  r=0
+  chart 4: empty (0.0s)
+  done ch=(5, 3, 0, 0, 0, 0) total 0.0s
+d=8 ch=(5, 3, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 4, 2): excluded (E1)  r=8
+d=8 ch=(5, 3, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 3, 3): nN=37 nD=3 nH=18 r=7 quadrics=19/89 build=0.0s
+  annihilator charts: 2 (of 3 forms)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 3, 0, 0, 3, 3) total 0.0s
+d=8 ch=(5, 3, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 5, 1): nN=43 nD=4 nH=11 r=11 quadrics=70/73 build=0.0s
+  annihilator charts: 4 (of 4 forms)
+d=8 ch=(5, 4, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(5, 3, 0, 0, 5, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(5, 4, 0, 0, 0, 4): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 0, 2): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  chart 3: empty (0.0s)
+  done ch=(5, 3, 0, 0, 5, 1) total 0.0s
+d=8 ch=(5, 4, 0, 0, 1, 3): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 2, 2): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 3, 5): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 3, 1): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 4, 2): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 4, 0): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 4, 4): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 5, 1): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(5, 4, 0, 0, 5, 5): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 0, 2): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 0, 4): excluded (E1)  r=4
+d=8 ch=(5, 5, 0, 0, 1, 1): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 0, 0): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 1, 5): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 1, 3): excluded (E1)  r=2
+d=8 ch=(5, 5, 0, 0, 2, 0): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 2, 2): excluded (E1)  r=4
+d=8 ch=(5, 5, 0, 0, 2, 4): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 3, 3): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 3, 1): nN=49 nD=3 nH=10 r=14 quadrics=53/71 build=0.0s
+  annihilator charts: 3 (of 3 forms)
+d=8 ch=(5, 5, 0, 0, 3, 5): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+d=8 ch=(5, 5, 0, 0, 4, 2): excluded (E1)  r=0
+  chart 2: empty (0.0s)
+  done ch=(5, 5, 0, 0, 3, 1) total 0.0s
+d=8 ch=(5, 5, 0, 0, 4, 0): nN=52 nD=5 nH=17 r=16 quadrics=77/87 build=0.0s
+  annihilator charts: 5 (of 5 forms)
+d=8 ch=(5, 5, 0, 0, 4, 4): excluded (E1)  r=0
+  chart 0: empty (0.0s)
+d=8 ch=(5, 5, 0, 0, 5, 3): excluded (E1)  r=0
+d=8 ch=(5, 5, 0, 0, 5, 1): excluded (E1)  r=0
+  chart 1: empty (0.0s)
+  chart 2: empty (0.0s)
+d=8 ch=(5, 5, 0, 0, 5, 5): nN=40 nD=4 nH=10 r=7 quadrics=41/71 build=0.0s
+  annihilator charts: 3 (of 4 forms)
+  chart 3: empty (0.0s)
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  chart 4: empty (0.0s)
+  done ch=(5, 5, 0, 0, 4, 0) total 0.0s
+  chart 2: empty (0.0s)
+  done ch=(5, 5, 0, 0, 5, 5) total 0.0s
+=== DONE d=8; blocks with findings: 0

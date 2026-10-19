@@ -1,0 +1,164 @@
+=== START d=12 eps=-1 tau-stable Y-even chars=108
+d=12 ch=(0, 0, 0, 0, 0, 0) eps=-1: nN=358->89 nD=60->9 r=53 quadrics=352 build=15.1s
+  chart 0: empty (12.7s)
+  chart 1: empty (12.3s)
+  done ch=(0, 0, 0, 0, 0, 0) eps=-1 total 40.1s
+d=12 ch=(0, 0, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 0, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 1, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 1, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 1, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 2, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 2, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 2, 0, 0, 4, 0) eps=-1: nN=346->84 nD=50->6 r=48 quadrics=331 build=7.4s
+  chart 0: empty (1.6s)
+  chart 1: empty (1.4s)
+  done ch=(0, 2, 0, 0, 4, 0) eps=-1 total 10.5s
+d=12 ch=(0, 3, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 3, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 3, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 4, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 4, 0, 0, 2, 0) eps=-1: nN=361->90 nD=47->5 r=51 quadrics=344 build=5.7s
+  chart 0: empty (0.7s)
+  chart 1: empty (0.6s)
+  done ch=(0, 4, 0, 0, 2, 0) eps=-1 total 7.0s
+d=12 ch=(0, 4, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 5, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 5, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(0, 5, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 0, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 0, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 0, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 1, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 1, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 1, 0, 0, 4, 0) eps=-1: nN=256->59 nD=37->4 r=32 quadrics=248 build=2.0s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(1, 1, 0, 0, 4, 0) eps=-1 total 2.1s
+d=12 ch=(1, 2, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 2, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 2, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 3, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 3, 0, 0, 2, 0) eps=-1: nN=286->70 nD=35->3 r=37 quadrics=226 build=2.2s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(1, 3, 0, 0, 2, 0) eps=-1 total 2.2s
+d=12 ch=(1, 3, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 4, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 4, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 4, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 5, 0, 0, 0, 0) eps=-1: nN=253->57 nD=37->4 r=30 quadrics=214 build=1.8s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(1, 5, 0, 0, 0, 0) eps=-1 total 1.9s
+d=12 ch=(1, 5, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(1, 5, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 0, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 0, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 0, 0, 0, 4, 0) eps=-1: nN=228->49 nD=30->3 r=28 quadrics=232 build=1.5s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(2, 0, 0, 0, 4, 0) eps=-1 total 1.5s
+d=12 ch=(2, 1, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 1, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 1, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 2, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 2, 0, 0, 2, 0) eps=-1: nN=243->54 nD=26->2 r=30 quadrics=181 build=1.2s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(2, 2, 0, 0, 2, 0) eps=-1 total 1.3s
+d=12 ch=(2, 2, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 3, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 3, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 3, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 4, 0, 0, 0, 0) eps=-1: nN=222->46 nD=29->3 r=25 quadrics=201 build=1.2s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(2, 4, 0, 0, 0, 0) eps=-1 total 1.3s
+d=12 ch=(2, 4, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 4, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 5, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 5, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(2, 5, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 0, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 0, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 0, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 1, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 1, 0, 0, 2, 0) eps=-1: nN=339->81 nD=42->4 r=45 quadrics=321 build=4.2s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(3, 1, 0, 0, 2, 0) eps=-1 total 4.3s
+d=12 ch=(3, 1, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 2, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 2, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 2, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 3, 0, 0, 0, 0) eps=-1: nN=330->78 nD=46->5 r=42 quadrics=306 build=4.7s
+  chart 0: empty (0.4s)
+  chart 1: empty (0.4s)
+  done ch=(3, 3, 0, 0, 0, 0) eps=-1 total 5.4s
+d=12 ch=(3, 3, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 3, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 4, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 4, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 4, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 5, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 5, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(3, 5, 0, 0, 4, 0) eps=-1: nN=330->78 nD=45->5 r=45 quadrics=345 build=4.6s
+  chart 0: empty (0.1s)
+  chart 1: empty (0.1s)
+  done ch=(3, 5, 0, 0, 4, 0) eps=-1 total 4.7s
+d=12 ch=(4, 0, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 0, 0, 0, 2, 0) eps=-1: nN=260->61 nD=34->3 r=31 quadrics=205 build=1.9s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(4, 0, 0, 0, 2, 0) eps=-1 total 1.9s
+d=12 ch=(4, 0, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 1, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 1, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 1, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 2, 0, 0, 0, 0) eps=-1: nN=245->55 nD=33->3 r=28 quadrics=208 build=1.5s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(4, 2, 0, 0, 0, 0) eps=-1 total 1.6s
+d=12 ch=(4, 2, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 2, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 3, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 3, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 3, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 4, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 4, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 4, 0, 0, 4, 0) eps=-1: nN=251->57 nD=33->3 r=30 quadrics=208 build=1.7s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(4, 4, 0, 0, 4, 0) eps=-1 total 1.7s
+d=12 ch=(4, 5, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 5, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(4, 5, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 0, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 0, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 0, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 1, 0, 0, 0, 0) eps=-1: nN=212->41 nD=24->2 r=23 quadrics=157 build=1.0s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 1, 0, 0, 0, 0) eps=-1 total 1.0s
+d=12 ch=(5, 1, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 1, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 2, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 2, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 2, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 3, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 3, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 3, 0, 0, 4, 0) eps=-1: nN=230->48 nD=25->2 r=27 quadrics=216 build=1.2s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 3, 0, 0, 4, 0) eps=-1 total 1.2s
+d=12 ch=(5, 4, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 4, 0, 0, 2, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 4, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 5, 0, 0, 0, 0) eps=-1: block not tau-stable or empty
+d=12 ch=(5, 5, 0, 0, 2, 0) eps=-1: nN=224->46 nD=21->1 r=25 quadrics=110 build=0.9s
+  chart 0: empty (0.0s)
+  chart 1: empty (0.0s)
+  done ch=(5, 5, 0, 0, 2, 0) eps=-1 total 0.9s
+d=12 ch=(5, 5, 0, 0, 4, 0) eps=-1: block not tau-stable or empty
+=== DONE d=12 eps=-1; blocks with findings: 0 []

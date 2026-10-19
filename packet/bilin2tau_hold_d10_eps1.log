@@ -1,0 +1,12 @@
+=== START d=10 eps=1 tau-stable Y-even chars=108
+d=10 ch=(0, 0, 0, 0, 0, 0) eps=1: block not tau-stable or empty
+d=10 ch=(0, 0, 0, 0, 2, 0) eps=1: block not tau-stable or empty
+d=10 ch=(0, 0, 0, 0, 4, 0) eps=1: nN=194->150 nD=30->27 r=63 quadrics=195 build=0.9s
+  chart 0: FAIL ''
+  chart 1: FAIL ''
+  done ch=(0, 0, 0, 0, 4, 0) eps=1 total 2491.5s
+d=10 ch=(0, 1, 0, 0, 0, 0) eps=1: block not tau-stable or empty
+d=10 ch=(0, 1, 0, 0, 2, 0) eps=1: block not tau-stable or empty
+d=10 ch=(0, 1, 0, 0, 4, 0) eps=1: block not tau-stable or empty
+d=10 ch=(0, 2, 0, 0, 0, 0) eps=1: block not tau-stable or empty
+d=10 ch=(0, 2, 0, 0, 2, 0) eps=1: nN=204->157 nD=26->24 r=64 quadrics=183 build=0.8s
