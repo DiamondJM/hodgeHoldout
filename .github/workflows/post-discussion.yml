@@ -1,0 +1,70 @@
+name: Post or update a hodge.computer discussion comment
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: create (new top-level comment), reply (reply to a top-level comment), or update (edit own comment)
+        required: true
+        default: create
+        type: choice
+        options: [create, reply, update]
+      body_file:
+        description: Path in this repository to the Markdown body
+        required: true
+        default: comment.md
+      discussion_node_id:
+        description: Discussion node ID (holdout = D_kwDOVLOOJc4AqE9G)
+        required: true
+        default: D_kwDOVLOOJc4AqE9G
+      target_id:
+        description: For reply, the top-level comment node ID; for update, the comment node ID to replace
+        required: false
+        default: ""
+
+permissions: {}
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Identify the posting account
+        env:
+          GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
+        run: gh api user --jq '"posting as: " + .login'
+      - name: Post
+        env:
+          GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
+          ACTION: ${{ inputs.action }}
+          BODY_FILE: ${{ inputs.body_file }}
+          DISCUSSION_ID: ${{ inputs.discussion_node_id }}
+          TARGET_ID: ${{ inputs.target_id }}
+        run: |
+          set -euo pipefail
+          test -s "$BODY_FILE"
+          case "$ACTION" in
+            create)
+              gh api graphql -f id="$DISCUSSION_ID" -F body=@"$BODY_FILE" -f query='
+              mutation($id: ID!, $body: String!) {
+                addDiscussionComment(input: {discussionId: $id, body: $body}) {
+                  comment { id url author { login } }
+                }
+              }' ;;
+            reply)
+              test -n "$TARGET_ID"
+              gh api graphql -f id="$DISCUSSION_ID" -f reply="$TARGET_ID" -F body=@"$BODY_FILE" -f query='
+              mutation($id: ID!, $reply: ID!, $body: String!) {
+                addDiscussionComment(input: {discussionId: $id, replyToId: $reply, body: $body}) {
+                  comment { id url author { login } }
+                }
+              }' ;;
+            update)
+              test -n "$TARGET_ID"
+              gh api graphql -f id="$TARGET_ID" -F body=@"$BODY_FILE" -f query='
+              mutation($id: ID!, $body: String!) {
+                updateDiscussionComment(input: {commentId: $id, body: $body}) {
+                  comment { id url author { login } }
+                }
+              }' ;;
+          esac
