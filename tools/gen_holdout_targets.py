@@ -321,8 +321,7 @@ def build(instance, exps):
         f'theorem cover_source_identity ({scalar_args} : K) (ha : a ≠ 0) (ht : t ≠ 0) :\n'
         f'    (2*a^5*(t^2-y^2)/t) * ({B_sc}) =\n'
         f'      {A_sc} - {C_sc}{E_scalar_div} := by\n'
-        '  field_simp\n'
-        '  ring\n')
+        '  field_simp <;> ring\n')
     sub('CoverScalars.lean',
         'theorem cover_normal_source_identity (a x y t g h : K)\n'
         '    (ha : a ≠ 0) (ht : t ≠ 0) :\n'
@@ -337,6 +336,14 @@ def build(instance, exps):
         f'        ({B_sc})*h)/g^2) =\n'
         f'      ((({dA_sc})*g-({A_sc})*h)/g^2) -\n'
         f'        ((({dC_sc})*g-({C_sc})*h)/g^2){E_scalar_div} := by\n')
+    sub('CoverScalars.lean',
+        '  by_cases hg : g = 0\n'
+        '  · simp [hg]\n'
+        '  · field_simp\n'
+        '    ring\n',
+        '  by_cases hg : g = 0\n'
+        '  · simp [hg]\n'
+        '  · field_simp <;> ring\n')
     files['CoverScalars.lean'] = credit + files['CoverScalars.lean']
 
     # ---- DeckTrace.lean: append generalised lemmas before `end HoldoutConstruction`

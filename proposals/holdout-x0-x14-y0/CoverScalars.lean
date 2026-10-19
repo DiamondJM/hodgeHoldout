@@ -45,8 +45,7 @@ theorem quotient_cover_jacobian (y t : K) :
 theorem cover_source_identity (a x0 x1 y t : K) (ha : a ≠ 0) (ht : t ≠ 0) :
     (2*a^5*(t^2-y^2)/t) * (x0*x1^4*1/(2*a^4)) =
       x0*x1^4*(a*t) - x0*x1^4*(a*t)*y^2/t^2 := by
-  field_simp
-  ring
+  field_simp <;> ring
 
 /-- The same identity applies to the distinguished normal-divergence
 source, because the coordinate Jacobian is independent of X0. -/
@@ -59,8 +58,7 @@ theorem cover_normal_source_identity (a x0 x1 y t g h : K)
         (((x1^4*(a*t)*y^2)*g-(x0*x1^4*(a*t)*y^2)*h)/g^2)/t^2 := by
   by_cases hg : g = 0
   · simp [hg]
-  · field_simp
-    ring
+  · field_simp <;> ring
 
 end Scalars
 
