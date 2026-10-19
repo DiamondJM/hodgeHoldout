@@ -32,7 +32,8 @@ jobs:
       - name: Identify the posting account
         env:
           GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
-        run: gh api user --jq '"posting as: " + .login'
+        run: |
+          gh api user --jq '.login' | sed 's/^/posting as /'
       - name: Post
         env:
           GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
