@@ -9,6 +9,10 @@ on:
       run_id:
         description: hodgeHoldout lean-check run id that verified the exact branch contents
         required: true
+      body_file:
+        description: Optional Markdown file in this repository to use as the PR body (skips the generated body)
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -25,11 +29,23 @@ jobs:
           GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
           INSTANCE: ${{ inputs.instance }}
           RUN_ID: ${{ inputs.run_id }}
+          BODY_FILE: ${{ inputs.body_file }}
         run: |
           set +e
           out=/tmp/pr-out.txt
           : > "$out"
           echo "login=$(gh api user --jq .login 2>&1)" >> "$out"
+          if [ -n "$BODY_FILE" ]; then
+            cp "$BODY_FILE" /tmp/body.md
+            gh api -X POST repos/hodge-computer/sextics/pulls \
+              -f title="Solve $INSTANCE: adapted holdout Fermat-cover and moving-conic construction" \
+              -f head="DiamondJM:solve/$INSTANCE" -f base=main -F body=@/tmp/body.md \
+              --jq '"\(.number) \(.html_url)"' >> "$out" 2>&1
+            rc=$?
+            echo "exit=$rc" >> "$out"
+            echo "rc=$rc" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           case "$INSTANCE" in
             holdout-x13-y13)    A='X_1^3Y_1^3'; k=-2 ;;
             holdout-p3)         A='X_2^3Y_2^3'; k=4 ;;
