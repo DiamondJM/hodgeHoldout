@@ -205,8 +205,7 @@ theorem exists_seed : Nonempty Seed := by
       _ = ((M r : ℂ)/(1-(r : ℂ))^3)^2 := by rw [hq]
       _ = (R r : ℂ) := by
         rw [div_pow, hrel]
-        field_simp
-        ring
+        field_simp <;> ring
   have hk6 : k^6 = (M r : ℂ)/q^2 := by
     calc
       k^6 = (k^2)^3 := by ring
