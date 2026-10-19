@@ -1,0 +1,41 @@
+name: Report pull request states on hodge-computer/sextics
+
+on:
+  workflow_dispatch:
+    inputs:
+      numbers:
+        description: Space-separated PR numbers to report (in addition to all open PRs by the token owner)
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Query
+        env:
+          GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
+          NUMBERS: ${{ inputs.numbers }}
+        run: |
+          set +e
+          out=/tmp/status-out.txt
+          : > "$out"
+          login=$(gh api user --jq .login)
+          echo "login=$login" >> "$out"
+          for n in $NUMBERS; do
+            gh api "repos/hodge-computer/sextics/pulls/$n" --jq '"\(.number) \(.state) merged=\(.merged) \(.title)"' >> "$out" 2>&1
+          done
+          echo "open PRs by $login:" >> "$out"
+          gh api "repos/hodge-computer/sextics/pulls?state=open&per_page=100" --jq ".[] | select(.user.login==\"$login\") | \"\(.number) \(.state) \(.title)\"" >> "$out" 2>&1
+          echo "(end)" >> "$out"
+      - name: Record outcome as an issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { echo '```'; cat /tmp/status-out.txt; echo '```'; } > /tmp/issue-body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "pr-status run ${GITHUB_RUN_ID}" --body-file /tmp/issue-body.md
