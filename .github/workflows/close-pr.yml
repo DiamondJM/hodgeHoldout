@@ -1,0 +1,51 @@
+name: Close a pull request on hodge-computer/sextics
+
+on:
+  workflow_dispatch:
+    inputs:
+      numbers:
+        description: Space-separated PR numbers to close
+        required: true
+      comment:
+        description: Optional comment to leave before closing
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close
+        id: close
+        env:
+          GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
+          NUMBERS: ${{ inputs.numbers }}
+          COMMENT: ${{ inputs.comment }}
+        run: |
+          set +e
+          out=/tmp/close-out.txt
+          : > "$out"
+          rc=0
+          for n in $NUMBERS; do
+            if [ -n "$COMMENT" ]; then
+              gh api -X POST "repos/hodge-computer/sextics/issues/$n/comments" -f body="$COMMENT" --jq '.html_url' >> "$out" 2>&1 || rc=1
+            fi
+            gh api -X PATCH "repos/hodge-computer/sextics/pulls/$n" -f state=closed --jq '"\(.number) \(.state)"' >> "$out" 2>&1 || rc=1
+          done
+          echo "exit=$rc" >> "$out"
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+      - name: Record outcome as an issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="close-pr run ${GITHUB_RUN_ID}: exit ${{ steps.close.outputs.rc }}"
+          { echo '```'; cat /tmp/close-out.txt; echo '```'; } > /tmp/issue-body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file /tmp/issue-body.md
+      - name: Fail if closing failed
+        if: steps.close.outputs.rc != '0'
+        run: exit 1
