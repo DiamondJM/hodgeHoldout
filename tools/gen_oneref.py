@@ -56,6 +56,7 @@ edit('PhysicalCoverEmbedding.lean', [
     ('(baseAlpha (R := K)) (baseBeta (R := K))', '(baseAlpha (R := K)) (baseAlpha (R := K))', None)])
 edit('CommonCoverBaseChange.lean', [
     (PAIR_K, PAIR_K_NEW, None), ('baseAlpha baseBeta', 'baseAlpha baseAlpha', None)])
+edit('CoverCoordinates.lean', [('      baseAlpha baseBeta\n', '      baseAlpha baseAlpha\n', 1)])
 for name in ('CoverFields.lean', 'CoverCoordinates.lean', 'QuotientCoverField.lean',
              'CoverQuotientCompatibility.lean', 'CoverSourceBinding.lean', 'CoverCertificate.lean'):
     edit(name, [(PAIR_C, PAIR_C_NEW, None)])

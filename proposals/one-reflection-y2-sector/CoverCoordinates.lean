@@ -48,7 +48,7 @@ private theorem commonCoverBaseChange_of_C
   rw [physicalCoverFieldMap_coordinateRing]
   change algebraMap (GenericCommonCoverRing ℂ) CommonCoverFunctionField
     (commonCoverBaseChange (algebraMap (FermatBaseRing ℂ) (FermatCoefficientField ℂ))
-      baseAlpha baseBeta
+      baseAlpha baseAlpha
       (physicalCommonCoverMap (AdjoinRoot.of _ (MvPolynomial.X i)))) = _
   rw [physicalCommonCoverMap, AdjoinRoot.map_of]
   fin_cases i <;>
