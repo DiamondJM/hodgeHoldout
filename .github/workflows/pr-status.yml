@@ -27,8 +27,14 @@ jobs:
           login=$(gh api user --jq .login)
           echo "login=$login" >> "$out"
           for n in $NUMBERS; do
-            gh api "repos/hodge-computer/sextics/pulls/$n" --jq '"\(.number) \(.state) merged=\(.merged) \(.title)"' >> "$out" 2>&1
+            gh api "repos/hodge-computer/sextics/pulls/$n" --jq '"\(.number) \(.state) merged=\(.merged) head=\(.head.sha[0:10]) \(.title)"' >> "$out" 2>&1
+            sha=$(gh api "repos/hodge-computer/sextics/pulls/$n" --jq .head.sha 2>/dev/null)
+            echo "  check runs for $n:" >> "$out"
+            gh api "repos/hodge-computer/sextics/commits/$sha/check-runs?per_page=50" --jq '.check_runs[] | "    \(.name): \(.status) \(.conclusion) \(.html_url)"' >> "$out" 2>&1
+            gh api "repos/hodge-computer/sextics/commits/$sha/status" --jq '.statuses[] | "    status \(.context): \(.state)"' >> "$out" 2>&1
           done
+          echo "all open PRs:" >> "$out"
+          gh api "repos/hodge-computer/sextics/pulls?state=open&per_page=100" --jq '.[] | "\(.number) \(.user.login) \(.created_at[0:16]) \(.title)"' >> "$out" 2>&1
           echo "open PRs by $login:" >> "$out"
           gh api "repos/hodge-computer/sextics/pulls?state=open&per_page=100" --jq ".[] | select(.user.login==\"$login\") | \"\(.number) \(.state) \(.title)\"" >> "$out" 2>&1
           echo "(end)" >> "$out"
