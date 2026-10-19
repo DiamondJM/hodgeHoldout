@@ -551,7 +551,7 @@ private theorem physical_normal_source_trace
   change physicalCoverFieldMap physicalNormalSource *
       (1-physicalCoverFieldMap (physicalResidueMap (MvPolynomial.X 4)^4)*(coverT^4)⁻¹) +
 ''',
-        f'''  apply holdout_hasCertificate_of_cover_residue {E_cover} {trace_lemma} v
+        f'''  apply holdout_hasCertificate_of_cover_residue ({E_cover}) {trace_lemma} v
   change physicalCoverFieldMap physicalNormalSource -
       physicalCoverFieldMap physicalCompanionNormalSource * {E_cover} +
 ''')

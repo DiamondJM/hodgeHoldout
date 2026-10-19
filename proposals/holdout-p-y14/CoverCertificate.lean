@@ -98,7 +98,7 @@ theorem holdout_hasCertificate_of_quotient_residue
         cover_normal_source_binding
   have hg : quotientCoverFieldMap coverQuotientNormal =
       physicalCoverFieldMap physicalNormal := cover_normal_binding
-  apply holdout_hasCertificate_of_cover_residue coverT^2 commonCover_trace_square v
+  apply holdout_hasCertificate_of_cover_residue (coverT^2) commonCover_trace_square v
   change physicalCoverFieldMap physicalNormalSource -
       physicalCoverFieldMap physicalCompanionNormalSource * coverT^2 +
     residueDivergence coverPhysicalTangent (physicalCoverFieldMap physicalNormal) v = 0
