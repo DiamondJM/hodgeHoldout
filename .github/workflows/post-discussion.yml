@@ -23,7 +23,8 @@ on:
         default: ""
 
 permissions:
-  contents: write
+  contents: read
+  issues: write
 
 jobs:
   post:
@@ -36,6 +37,7 @@ jobs:
         run: |
           gh api user --jq '.login' | sed 's/^/posting as /'
       - name: Post
+        id: post
         env:
           GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
           ACTION: ${{ inputs.action }}
@@ -43,13 +45,13 @@ jobs:
           DISCUSSION_ID: ${{ inputs.discussion_node_id }}
           TARGET_ID: ${{ inputs.target_id }}
         run: |
-          set -uo pipefail
-          mkdir -p runs
-          out="runs/${GITHUB_RUN_ID}.txt"
-          { echo "action=$ACTION body_file=$BODY_FILE discussion=$DISCUSSION_ID target=$TARGET_ID";
-            echo "login=$(gh api user --jq .login 2>&1)";
-            echo "scopes=$(curl -sS -I -H "Authorization: token $GH_TOKEN" https://api.github.com/user | grep -i x-oauth-scopes || true)"; } > "$out"
-          test -s "$BODY_FILE" || { echo "missing body file" >> "$out"; }
+          out=/tmp/post-out.txt
+          : > "$out"
+          echo "action=$ACTION body_file=$BODY_FILE discussion=$DISCUSSION_ID target=$TARGET_ID" >> "$out"
+          echo "login=$(gh api user --jq .login 2>&1)" >> "$out"
+          echo "token_type=$(gh auth status 2>&1 | grep -i 'token' | head -2 | tr '\n' ' ')" >> "$out"
+          echo "body_bytes=$(wc -c < "$BODY_FILE" 2>&1)" >> "$out"
+          rc=1
           case "$ACTION" in
             create)
               gh api graphql -f id="$DISCUSSION_ID" -F body=@"$BODY_FILE" -f query='
@@ -72,10 +74,17 @@ jobs:
                   comment { id url author { login } }
                 }
               }' >> "$out" 2>&1; rc=$? ;;
-            *) echo "unknown action" >> "$out"; rc=2 ;;
           esac
           echo "exit=$rc" >> "$out"
-          git config user.name "hodgeHoldout workflow"
-          git config user.email "actions@users.noreply.github.com"
-          git add "$out" && git commit -q -m "Record discussion post run ${GITHUB_RUN_ID}" && git push
-          exit $rc
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+      - name: Record outcome as an issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="post run ${GITHUB_RUN_ID}: exit ${{ steps.post.outputs.rc }}"
+          { echo '```'; cat /tmp/post-out.txt; echo '```'; } > /tmp/issue-body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file /tmp/issue-body.md
+      - name: Fail if the post failed
+        if: steps.post.outputs.rc != '0'
+        run: exit 1
