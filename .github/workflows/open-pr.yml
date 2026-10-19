@@ -1,0 +1,63 @@
+name: Open a solution PR on hodge-computer/sextics
+
+on:
+  workflow_dispatch:
+    inputs:
+      instance:
+        description: Instance id (branch solve/<instance> on DiamondJM/sextics)
+        required: true
+      run_id:
+        description: hodgeHoldout lean-check run id that verified the exact branch contents
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  open:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Open the pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
+          INSTANCE: ${{ inputs.instance }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: |
+          set +e
+          out=/tmp/pr-out.txt
+          : > "$out"
+          echo "login=$(gh api user --jq .login 2>&1)" >> "$out"
+          case "$INSTANCE" in
+            holdout-x13-y13)    A='X_1^3Y_1^3'; k=-2 ;;
+            holdout-p3)         A='X_2^3Y_2^3'; k=4 ;;
+            holdout-x12-p-y02)  A='X_1^2X_2Y_0^2Y_2'; k=4 ;;
+            holdout-p-y14)      A='X_2Y_1^4Y_2'; k=-2 ;;
+            holdout-x1-y04-y1)  A='X_1Y_0^4Y_1'; k=4 ;;
+            holdout-x0-y03-y12) A='X_0Y_0^3Y_1^2'; k=2 ;;
+            holdout-all-six)    A='X_0X_1X_2Y_0Y_1Y_2'; k=2 ;;
+            holdout-x0-x14-y0)  A='X_0X_1^4Y_0'; k=2 ;;
+            holdout-x04-p)      A='X_0^4X_2Y_2'; k=2 ;;
+            *) echo "unknown instance $INSTANCE" >> "$out"; echo "rc=1" >> "$GITHUB_OUTPUT"; exit 0 ;;
+          esac
+          python3 tools/pr_body.py "$INSTANCE" "$A" "$k" "https://github.com/DiamondJM/hodgeHoldout/actions/runs/$RUN_ID" > /tmp/body.md
+          gh api -X POST repos/hodge-computer/sextics/pulls \
+            -f title="Solve $INSTANCE: adapted holdout Fermat-cover and moving-conic construction" \
+            -f head="DiamondJM:solve/$INSTANCE" -f base=main -F body=@/tmp/body.md \
+            --jq '"\(.number) \(.html_url)"' >> "$out" 2>&1
+          rc=$?
+          echo "exit=$rc" >> "$out"
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+      - name: Record outcome as an issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="open-pr ${{ inputs.instance }} run ${GITHUB_RUN_ID}: exit ${{ steps.pr.outputs.rc }}"
+          { echo '```'; cat /tmp/pr-out.txt; echo '```'; } > /tmp/issue-body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file /tmp/issue-body.md
+      - name: Fail if the PR was not opened
+        if: steps.pr.outputs.rc != '0'
+        run: exit 1
