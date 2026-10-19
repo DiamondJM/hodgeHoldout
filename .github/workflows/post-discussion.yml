@@ -45,6 +45,7 @@ jobs:
           DISCUSSION_ID: ${{ inputs.discussion_node_id }}
           TARGET_ID: ${{ inputs.target_id }}
         run: |
+          set +e
           out=/tmp/post-out.txt
           : > "$out"
           echo "action=$ACTION body_file=$BODY_FILE discussion=$DISCUSSION_ID target=$TARGET_ID" >> "$out"
