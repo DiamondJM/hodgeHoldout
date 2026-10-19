@@ -1,0 +1,66 @@
+name: Diagnose a pull request's checks on hodge-computer/sextics
+
+on:
+  workflow_dispatch:
+    inputs:
+      number:
+        description: PR number to diagnose
+        required: true
+      others:
+        description: Space-separated other PR numbers whose check conclusions to list
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect
+        env:
+          GH_TOKEN: ${{ secrets.HODGE_DISCUSSION_TOKEN }}
+          N: ${{ inputs.number }}
+          OTHERS: ${{ inputs.others }}
+        run: |
+          set +e
+          out=/tmp/diag.txt
+          : > "$out"
+          sha=$(gh api "repos/hodge-computer/sextics/pulls/$N" --jq .head.sha)
+          base=$(gh api "repos/hodge-computer/sextics/pulls/$N" --jq '"\(.base.sha) mergeable=\(.mergeable) state=\(.mergeable_state)"')
+          echo "PR $N head=$sha base/merge: $base" >> "$out"
+          echo "== statuses" >> "$out"
+          gh api "repos/hodge-computer/sextics/commits/$sha/status" --jq '.statuses[] | "\(.context): \(.state) | \(.description) | \(.target_url)"' >> "$out" 2>&1
+          echo "== check runs" >> "$out"
+          gh api "repos/hodge-computer/sextics/commits/$sha/check-runs?per_page=50" --jq '.check_runs[] | "\(.id) \(.name): \(.status) \(.conclusion)\n  title: \(.output.title)\n  summary: \(.output.summary)\n  text: \(.output.text)"' >> "$out" 2>&1
+          echo "== PR comments" >> "$out"
+          gh api "repos/hodge-computer/sextics/issues/$N/comments?per_page=50" --jq '.[] | "[\(.user.login) \(.created_at)]\n\(.body)\n"' >> "$out" 2>&1
+          echo "== review comments" >> "$out"
+          gh api "repos/hodge-computer/sextics/pulls/$N/reviews?per_page=50" --jq '.[] | "[\(.user.login) \(.state)] \(.body)"' >> "$out" 2>&1
+          echo "== failed job logs" >> "$out"
+          for run in $(gh api "repos/hodge-computer/sextics/commits/$sha/check-runs?per_page=50" --jq '.check_runs[] | select(.conclusion=="failure") | .html_url' | sed -E 's#.*/actions/runs/([0-9]+)/job/([0-9]+)#\1 \2#'); do :; done
+          gh api "repos/hodge-computer/sextics/commits/$sha/check-runs?per_page=50" --jq '.check_runs[] | select(.conclusion=="failure") | .html_url' | while read -r url; do
+            job=$(echo "$url" | sed -E 's#.*/job/([0-9]+).*#\1#')
+            echo "--- job $job steps:" >> "$out"
+            gh api "repos/hodge-computer/sextics/actions/jobs/$job" --jq '.steps[] | "  \(.number) \(.name): \(.status) \(.conclusion)"' >> "$out" 2>&1
+            gh api "repos/hodge-computer/sextics/actions/jobs/$job/logs" > /tmp/job.log 2>/tmp/job.err
+            echo "--- job $job log: $(wc -l < /tmp/job.log) lines ($(cat /tmp/job.err | head -c 200))" >> "$out"
+            echo "--- lines with error/fail/require/Traceback/exception:" >> "$out"
+            grep -n -i "error\|fail\|require\|traceback\|exception\|refus\|timeout\|budget" /tmp/job.log | grep -v -i "errorlevel\|no-error\|fail-fast\|failure()\|CONTINUE_ON_ERROR" | head -120 >> "$out"
+            echo "--- last 120 lines:" >> "$out"
+            tail -120 /tmp/job.log >> "$out"
+          done
+          echo "== other PRs" >> "$out"
+          for m in $OTHERS; do
+            s=$(gh api "repos/hodge-computer/sextics/pulls/$m" --jq .head.sha)
+            gh api "repos/hodge-computer/sextics/commits/$s/check-runs?per_page=50" --jq ".check_runs[] | \"$m \(.name): \(.status) \(.conclusion)\"" >> "$out" 2>&1
+          done
+      - name: Record outcome as an issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { echo '```'; head -c 60000 /tmp/diag.txt; echo '```'; } > /tmp/issue-body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "pr-diagnose ${{ inputs.number }} run ${GITHUB_RUN_ID}" --body-file /tmp/issue-body.md
