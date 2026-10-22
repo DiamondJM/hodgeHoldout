@@ -42,3 +42,17 @@ off-paired pow0135        no rows=13738 cols=2602 rank=2352 30s
 off-paired pow0145        no rows=13740 cols=2602 rank=2352 30s
 off-paired pow0234        no rows=13982 cols=2602 rank=2352 30s
 off-paired pow0235        no rows=13969 cols=2602 rank=2352 30s
+off-paired pow0245        no rows=13950 cols=2602 rank=2352 30s
+off-paired pow0345        no rows=13983 cols=2602 rank=2355 31s
+off-paired pow1234        no rows=13949 cols=2602 rank=2352 30s
+off-paired pow1235        no rows=13948 cols=2602 rank=2352 30s
+off-paired pow1245        no rows=13956 cols=2602 rank=2352 30s
+off-paired pow1345        no rows=13949 cols=2602 rank=2355 30s
+off-paired pow2345        no rows=14177 cols=2602 rank=2355 31s
+off-paired Fsub0134       no rows=14543 cols=2602 rank=2351 31s
+off-paired Fsub1245       no rows=14729 cols=2602 rank=2349 31s
+off-paired Fsub01234      no rows=15086 cols=2602 rank=2357 33s
+off-paired Fsub01235      no rows=15265 cols=2602 rank=2358 34s
+off-paired Fsub01245      no rows=15175 cols=2602 rank=2354 33s
+off-paired Fsub01345      no rows=15085 cols=2602 rank=2357 33s
+off-paired Fsub12345      no rows=15208 cols=2602 rank=2354 33s

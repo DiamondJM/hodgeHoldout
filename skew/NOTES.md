@@ -25,7 +25,25 @@ l_i needs  p in span(l),  p t in Sym^2(l),  Y0^6+Y1^6+Y2^6 in Sym^3(l),  det d(l
  * Product shape l2 l3 = p t - c p^2 with l2 a Laurent monomial in Y2 (k = 1, 2, 3) fails;
    a Y2-polynomial l2 gives det ~ (dl2/dY2)/l2, never Y2-free; the rank-one shape
    p t - c p^2 = m'^2 + p n' forces m' affine in Y2 and then C_003 ~ p^3/alpha^6, impossible.
-These are the cases I could close by hand; a general rational l2 with l2 l3 = p t - c p^2 is open.
+The remaining product case is closed by the following argument (proof sketch, see below).
+
+## No cubic-surface reduction with one active X-coordinate (general product case)
+Setting: l1 = p, l2 l3 = P4 := p t - c p^2 (the nondegenerate case after shifting l2, l3 by
+multiples of p), K := Y0^6+Y1^6+Y2^6 = C(p, l2, l3) with C a cubic over the field of the passive
+ratios, and l2, l3 rational in Y2 over k = C(r,w)(Y0,Y1).
+1. Substituting l3 = P4/l2 gives  Y2^6 = Phi(l2),  Phi(X) = sum_{j=0..6} E_j X^(j-3) - K0,
+   where E_j are polynomials in p, P4 and K0 = Y0^6+Y1^6.  Phi is a Laurent polynomial: its only
+   poles on P^1 are 0 and infinity.
+2. Y2 -> Y2^6 = Phi(l2(Y2)) has a single pole, totally ramified.  l2 : P^1 -> P^1 is surjective, so if
+   Phi had poles at both 0 and infinity, both would have preimages, giving two poles of Y2^6.
+   Hence Phi has one pole; say infinity (the case 0 is the same with l2 <-> l3).  Then
+   l2^{-1}(infinity) = {Y2 = infinity}, i.e. l2 is a polynomial in Y2 of degree 6/deg(Phi) >= 2.
+3. p and P4 do not involve Y2, so  det d(p, l2, P4/l2)/d(Y0,Y1,Y2) = -(dl2/dY2) J(p,P4) / l2,
+   and (dl2/dY2)/l2 depends on Y2 for every nonconstant polynomial l2.  But the density condition
+   needs det_Y proportional to Y0^3 (or Y0^3 +- Y1^3), which does not involve Y2.  Contradiction.
+(The X-part of the Jacobian splits off because u, r, w involve only X; the density must be
+const * u^2 by separate X/Y weights, so det_Y must equal const * Y0^3.)
+Step 2 is checked by Groebner basis on a specialisation (groebner/lemma*.sing).
 
 ## Fixed-denominator calibration on the solved one-reflection
 Supports s^2+T^2, S^2+T^2, T^2 - s^2/3, T^2 - S^2/3 (degree 6): A, A+, A- all NOT supported
