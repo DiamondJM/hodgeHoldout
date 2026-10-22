@@ -66,3 +66,11 @@ Python-level sparse elimination on this machine.
 Side remark: the degree-6 test showed s^2+T^2 does not support A+-, so fqlx's support is not
 the tritangent-plane curves {u = rho_k p, s = +-i T}; those curves do deform to first order in the
 skew fibers (Kskew restricted to them lies in (u - rho p, s, T, p^2)), but that is not the relevant support.
+
+## Route 2: fibration over (r, w, x = Y0/Y1)  (skew/fibration.py)
+Fibre = plane sextic g(X0^2, Y1^2) + Y2^6 = 0, g a binary cubic; the skew term only adds
+(r/7) x (x^2-1) U V^2 to g, so it is harmless here, and the picture is identical for one-reflection.
+The residue character of A under (X-block sign, (Y0,Y1) sign, Y2 -> zeta Y2) is (+1, -1, zeta);
+on the fibre this is the 2-dim eigenspace {X0 Y1^2, X0^3} of H^{1,0} with no (0,1) part: a
+signature-(2,0) unitary piece of a mu6-cover of P^1, not an elliptic curve.  So the elliptic-companion
+library does not apply directly, and this fibration neither obstructs nor serves.
