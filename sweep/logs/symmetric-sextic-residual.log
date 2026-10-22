@@ -1,6 +1,0 @@
-# symmetric-sextic-residual q=1 candidates=65
-symmetric-sextic-residual pow01          no rows=15880 cols=2602 rank=2307 54s
-symmetric-sextic-residual pow02          no rows=15880 cols=2602 rank=2307 54s
-symmetric-sextic-residual pow03          no rows=15871 cols=2602 rank=2304 54s
-symmetric-sextic-residual pow04          no rows=15871 cols=2602 rank=2304 56s
-symmetric-sextic-residual pow05          no rows=15871 cols=2602 rank=2304 54s
