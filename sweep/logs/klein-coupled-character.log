@@ -42,3 +42,13 @@ klein-coupled-character pow0135        no rows=14101 cols=2602 rank=2352 31s
 klein-coupled-character pow0145        no rows=14131 cols=2602 rank=2352 31s
 klein-coupled-character pow0234        no rows=14101 cols=2602 rank=2352 31s
 klein-coupled-character pow0235        no rows=14131 cols=2602 rank=2352 40s
+klein-coupled-character pow0245        no rows=14135 cols=2602 rank=2352 46s
+klein-coupled-character pow0345        no rows=14176 cols=2602 rank=2355 46s
+klein-coupled-character pow1234        no rows=14131 cols=2602 rank=2352 46s
+klein-coupled-character pow1235        no rows=14135 cols=2602 rank=2352 45s
+klein-coupled-character pow1245        no rows=14101 cols=2602 rank=2352 46s
+klein-coupled-character pow1345        no rows=14176 cols=2602 rank=2355 46s
+klein-coupled-character pow2345        no rows=14176 cols=2602 rank=2355 46s
+klein-coupled-character Fsub01234      no rows=15249 cols=2602 rank=2358 52s
+klein-coupled-character Fsub01235      no rows=15249 cols=2602 rank=2358 53s
+klein-coupled-character Fsub01245      no rows=15249 cols=2602 rank=2358 52s
