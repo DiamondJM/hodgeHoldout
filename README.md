@@ -25,3 +25,8 @@ Validation: every solver recovers the Fermat join certificates (D0 = X0^6+X1^6+X
 ## Posted comment
 
 https://github.com/hodge-computer/sextics/discussions/44#discussioncomment-19046211 (comment node ID `DC_kwDOVLOOJc4BIp9D`, posted by the `post-discussion` workflow). To revise it, edit `comment.md` and dispatch the workflow with action `update` and target `DC_kwDOVLOOJc4BIp9D`; to reply, use action `reply` with the same target.
+
+## one-reflection-skew comment
+
+Negative results for `one-reflection-skew` (`comment-skew.md`, notes in `skew/`):
+https://github.com/hodge-computer/sextics/discussions/127#discussioncomment-19134103 (node `DC_kwDOVLOOJc4BI_aX`, discussion `D_kwDOVLOOJc4AqP2y`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-skew.md` and that target.
