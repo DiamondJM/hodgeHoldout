@@ -54,3 +54,15 @@ Groebner checks (Singular 4.3, char 32003, Y0=2, Y1=3; groebner/):
 Supports s^2+T^2, S^2+T^2, T^2 - s^2/3, T^2 - S^2/3 (degree 6): A, A+, A- all NOT supported
 (mod 268435399).  The accepted support is the degree-30 D+ = 9 delta Z + 4 h^3 T^2, so low-degree
 fixed-D tests are weak evidence on this family.
+
+## Option 3 (first-order deformation of fqlx's certificate): sizing
+fqlx_cert.py rebuilds fqlx's strict half-certificate (N+, D+) mod 268435009 (a prime with sqrt 3)
+and checks N+(F0) = A+ D+ and D+ div N+ - N+(D+) = 0 exactly.  D+ has 725 terms, N+ 352-546
+per component, N+(Kskew) 1590.  The skew sextic keeps only 24 diagonal symmetries (vs 216), and
+D+ is semi-invariant only under tau (the powers of T = Y2^3 are mixed through R = T + lam s/3), so
+the first-order system for (N1, D1, H) after the tau split is ~1.13M + 2*0.16M unknowns against
+~4.1M rows of degree 60, with ~1.5k nonzeros per numerator column: out of reach for dense or
+Python-level sparse elimination on this machine.
+Side remark: the degree-6 test showed s^2+T^2 does not support A+-, so fqlx's support is not
+the tritangent-plane curves {u = rho_k p, s = +-i T}; those curves do deform to first order in the
+skew fibers (Kskew restricted to them lies in (u - rho p, s, T, p^2)), but that is not the relevant support.
