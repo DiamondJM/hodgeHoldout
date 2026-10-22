@@ -119,8 +119,15 @@ if __name__ == '__main__':
     cands = candidates(F)
     if len(sys.argv) > 3:
         cands = cands[:int(sys.argv[3])]
-    print(f'# {inst} q={q} candidates={len(cands)}', flush=True)
+    done = set()
+    logp = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs', inst + '.log')
+    if os.path.exists(logp):
+        done = {l.split()[1] for l in open(logp) if l.startswith(inst + ' ')}
+    if not done:
+        print(f'# {inst} q={q} candidates={len(cands)}', flush=True)
     for lab, D in cands:
+        if lab in done:
+            continue
         t = time.time()
         ok, nr, nc, r0 = test(F, q, A, D)
         print(f'{inst} {lab:14} {"SOLVABLE" if ok else "no"} rows={nr} cols={nc} rank={r0} {time.time()-t:.0f}s', flush=True)

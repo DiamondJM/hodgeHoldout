@@ -1,0 +1,15 @@
+off-paired
+dense-rational
+polarized-k3-remainder
+klein-coupled-character
+symmetric-sextic-residual
+rank-one-biquartic
+four-plus-two-residual
+quadric-contact-residual
+one-reflection-skew
+reflection-coupled-residual
+cyclic-triple-residual
+short-power-presentation
+quadratic-cubic-pullback
+eight-plane-configuration
+diagonal-permutation
