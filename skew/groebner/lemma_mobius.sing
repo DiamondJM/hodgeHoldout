@@ -1,0 +1,23 @@
+LIB "elim.lib";
+// Specialise Y0=2, Y1=3 (char 32003). l2 = (a0+a1*y)/(1+b1*y), l3 = P4/l2.
+// Impose K(y) = C(p, l2, l3) identically in y; then saturate away b1 = 0 (l2 polynomial)
+// and a1 - a0*b1 = 0 (l2 constant). Lemma predicts the unit ideal.
+option(redSB);
+ring R = 32003, (C300,C210,C201,C120,C111,C102,C030,C021,C012,C003,c,a0,a1,b1,y), dp;
+poly Y0 = 2; poly Y1 = 3;
+poly p = Y0*Y1; poly t = Y0^2-Y1^2; poly P4 = p*t - c*p^2;
+poly N = a0+a1*y; poly D = 1+b1*y;
+poly K = Y0^6+Y1^6+y^6;
+poly E = K*N^3*D^3 - (C300*p^3*N^3*D^3 + C210*p^2*N^4*D^2 + C201*p^2*P4*N^2*D^4 + C120*p*N^5*D
+         + C111*p*P4*N^3*D^3 + C102*p*P4^2*N*D^5 + C030*N^6 + C021*P4*N^4*D^2
+         + C012*P4^2*N^2*D^4 + C003*P4^3*D^6);
+ideal I = coeffs(E, y);
+I = sat(I, ideal(b1));
+I = sat(I, ideal(a1 - a0*b1));
+ideal J = std(I);
+print("Mobius, non-polynomial, nonconstant l2:"); print(J);
+// control: with b1 = 0 (l2 polynomial of degree 1 in y) solutions must also fail (degree 6/deg Phi >= 2)
+ideal I0 = coeffs(subst(E, b1, 0), y);
+I0 = sat(I0, ideal(a1));
+print("polynomial degree-1 l2:"); print(std(I0));
+quit;

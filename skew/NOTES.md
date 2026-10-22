@@ -43,7 +43,12 @@ ratios, and l2, l3 rational in Y2 over k = C(r,w)(Y0,Y1).
    needs det_Y proportional to Y0^3 (or Y0^3 +- Y1^3), which does not involve Y2.  Contradiction.
 (The X-part of the Jacobian splits off because u, r, w involve only X; the density must be
 const * u^2 by separate X/Y weights, so det_Y must equal const * Y0^3.)
-Step 2 is checked by Groebner basis on a specialisation (groebner/lemma*.sing).
+Groebner checks (Singular 4.3, char 32003, Y0=2, Y1=3; groebner/):
+ * lemma_mobius.sing: l2 = (a0+a1 y)/(1+b1 y), saturated by b1 and by a1-a0 b1 -> ideal <1>
+   (no non-polynomial Moebius l2); degree-1 polynomial l2 -> ideal <1> (needs degree >= 2).
+ * control_poly2.sing: polynomial degree-2 l2 -> nonempty variety (the setup is not vacuous; these
+   solutions are then killed by the Jacobian step 3).
+ A degree-(2,2) rational ansatz exceeded 9 GB in the first saturation and was abandoned.
 
 ## Fixed-denominator calibration on the solved one-reflection
 Supports s^2+T^2, S^2+T^2, T^2 - s^2/3, T^2 - S^2/3 (degree 6): A, A+, A- all NOT supported
