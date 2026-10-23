@@ -35,3 +35,6 @@ https://github.com/hodge-computer/sextics/discussions/127#discussioncomment-1913
 
 Notes for `cycle-q2` (`comment-cycleq2.md`, analysis in `cycleq2/`):
 https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19135828 (node `DC_kwDOVLOOJc4BI_1U`, discussion `D_kwDOVLOOJc4AqE9c`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-cycleq2.md` and that target.
+
+Progress note on the cycle-three Jacobian route (`comment-cycleq2-progress.md`), posted as a reply:
+https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19148488 (node `DC_kwDOVLOOJc4BJC7I`).
