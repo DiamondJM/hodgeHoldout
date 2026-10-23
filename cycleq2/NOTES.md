@@ -32,3 +32,31 @@ is open; its transport is a first-variation identity built for q = 1.
    lower pole order plus base derivatives, i.e. a second variation; the shared HigherResidues
    library (split-ternary) handles a related third-order-pole calculus.
 Both are new mathematics plus a cycle-three-sized Lean development; not a port.
+
+## Triple-cover Jacobian model (model_check.py, triple_cover.py)
+cycle-q2 has the same sextic as cycle-three, so hodgepodgeconjecture's Jacobian model applies:
+  M1:  256 y^2 = 256 x^3 + 32 a8(c1,c2,1,r,t) x + b256(c1,c2,1,r,t),   t/r = v^6, v = Y0/X0,
+with c1 = (Y1/X1)/v, c2 = (Y2/X2)/v passive (a8, b256 from data/cycle-three/JacobianModel.lean).
+Check: for 12 random (v,c1,c2) mod 101, 103, 107 the physical plane cubic (cycle-three's chart) and
+M1 have equal point counts, so M1 is the Jacobian family (not a quadratic twist).
+In (r:t), a8 and b256 are forms of degree 4 and 6: M1's fibres over fixed (c1,c2) are RATIONAL
+elliptic surfaces (chi = 1, p_g = 0), consistent with cycle-three's all-polynomial-sources theorem.
+
+Triple cover M3: base change (r:t) = (rho^3 : tau^3), tau/rho = v^2 (i.e. adjoin T3 = R v^2):
+  M3:  256 y^2 = 256 x^3 + 32 a8(c1,c2,1,rho^3,tau^3) x + b256(c1,c2,1,rho^3,tau^3)  in P(1,1,6,9).
+a, b have degrees (12, 18); orders at rho = 0 are (6, 0) and at tau = 0 are (3, 0), so the model
+is minimal: chi = 3, p_g = 2.  j is nonconstant (checked at c1,c2 = 2,3), so not isotrivial.
+H^{2,0} = {dtau ^ dx/y, tau dtau ^ dx/y}: deck tau -> omega tau acts by omega and omega^2, so the
+invariant part is M1's (p_g = 0) and each nontrivial sector has h^{2,0} = h^{0,2} = 1.
+
+Why the target needs M3: M1's volume multiplier (cycle-three's density_multiplier) is -144 R v^3,
+which matches the q=1 target's v^3.  The q=2 target A = alpha^2 beta^2 gamma U^2V^2W^2
+= v^5 c1^2 c2 R^6 x^2 y^2 carries v^5, an extra v^2 = T3/R that is a function on M3 but not on M1.
+On M3 the density then lies in a nontrivial deck sector.
+
+Consequence: on M3 the analogue of cycle-three's "every polynomial source has a primitive" is
+FALSE.  The nontrivial sectors contain transcendental classes (h^{2,0} = h^{0,2} = 1 per fibre).
+A construction must show that the transported q=2 source has zero component along that piece,
+over the (c1,c2) family, or deal with it.
+Next step: derive the pole-two transport (second variation in cycle-three's jet calculus) and test
+the resulting model source against the H^{2,0} representatives by Griffiths reduction on M3.
