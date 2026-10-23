@@ -147,6 +147,7 @@ rational Theta solving nabla Theta = Sigma modulo NS.
 Span of nabla^alpha s, s = Res(rho Omega/G) (the target-sector holomorphic 2-form), derivatives in
 c1, c2 tracked formally through d^beta G, then Griffiths-reduced to normal form at (c1,c2) = (2,3):
   order 0: rank 1;  order <= 1: rank 3;  order <= 2: rank 4;  order <= 3: rank 4;  order <= 4: rank 4.
+Same at (c1,c2) = (3,5): ranks 1, 3, 4, 4 through order 3.
 The span is closed under nabla from order 2 on, so s generates a rank-4 sub-local system T_omega of
 the 12-dimensional V_omega, with Hodge numbers (1, 2, 1).  This is the minimum allowed by the KS ranks.
 So the target sector is V_omega = T_omega (rank 4) + an 8-dimensional complement, which should be
