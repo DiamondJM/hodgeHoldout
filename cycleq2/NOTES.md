@@ -60,3 +60,38 @@ A construction must show that the transported q=2 source has zero component alon
 over the (c1,c2) family, or deal with it.
 Next step: derive the pole-two transport (second variation in cycle-three's jet calculus) and test
 the resulting model source against the H^{2,0} representatives by Griffiths reduction on M3.
+
+## Step 1: pole-two transport, cohomological form (invariants.py, inv_check.py, second_variation.py)
+Exact identity of forms:  2 A Omega/F^3 = d_s1 d_s2 (Omega/F_s)|_{s=0},
+  F_s = F + s1 m1 + s2 m2,  m1 = X0X1X2Y0Y1Y2 = alpha beta gamma UVW,  m2 = X0X1X2^2Y0Y1 = alpha beta UVW,
+since m1 m2 = A.  Both directions add an xyz term to cycle-three's cubic, with coefficients
+g1 = v^3 c1 c2 and g2 = v^2 c1 in its chart.
+
+Invariants with an xyz term (Hessian syzygy H(H(U)) = lam U + mu H(U), normalised to cycle-three):
+  48 s4 = 48(ae^2f + bdf^2 + cd^2e) + 216 abc m - 24 def m - m^4,
+  216 s6 = 5832a^2b^2c^2 + 864a^2ce^3 + 864ab^2f^3 + 1296abcdef - 540abc m^3 - 864abef^2 m - 864acde^2 m
+           + 72ae^2f m^2 + 864bc^2d^3 - 864bcd^2f m + 72bdf^2 m^2 + 72cd^2e m^2 - 216d^2e^2f^2 - 36def m^3 - m^6,
+  Jacobian: eta^2 = xi^3 + s4 xi - s6/4.  Checked: equal point counts for 20 random cubics (with m != 0)
+  mod 101, 103, 107, 109, no mismatch.
+
+Variations at s = 0 (A = s4, B = -s6/4):  A1, B1 carry v^3; A2, B2 carry v^2; A12 = 0; B12 carries v^5
+(all mod 6, everything else is a function of t = v^6).  Gauss-Manin on the model:
+  d_s1 d_s2 [dX/Y] = [ 3(A1 X + B1)(A2 X + B2)/(4 Y^5) - (A12 X + B12)/(2 Y^3) ] dX,
+and Res(Omega/F) = (model form)/(-144 R v^3) (cycle-three density_multiplier).  Writing A1 = v^3 A1~,
+A2 = v^2 A2~, B12 = v^5 B12~ (tilde quantities functions of t on M1), the transported q=2 source is
+  S = -(1/288) (v^2 / R) [ 3(A1~ X + B1~)(A2~ X + B2~)/(4Y^5) - B12~/(2Y^3) ] dT dc1 dc2 dR dX,
+with v^2 = T3/R: a rational source on the triple cover M3 in a nontrivial deck sector, and NOT on M1.
+This confirms (now from the actual Weierstrass variations, not a heuristic) that the target needs M3.
+
+Caveats (needed for a proof, not for the cohomology computation):
+ * the multiplier -144 R v^3 is assumed independent of s.  T, c1, c2, R do not move with s; it comes
+   from cycle-three's covariant identity D_y xi/(2 eta) = 3/g, which holds for every ternary cubic.
+   This should still be re-derived with the xyz term;
+ * the moving map (covariants X, Y depend on s) contributes exact corrections at first and second
+   order.  cycle-three's first-order correction W generalises, but the second-order term must be
+   written out explicitly for a certificate.
+
+Step 2 (next): S restricted to a fibre over fixed (c1,c2) is a class sigma on the elliptic surface
+S3 (chi = 3, p_g = 2).  The certificate route survives iff sigma has no (0,2) part.  sigma lies in the
+omega-sector, so this is the vanishing of the cup product of sigma with the holomorphic 2-form of the
+omega^2-sector.  That is computable by Griffiths reduction on the weighted surface mod p.
