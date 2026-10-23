@@ -19,15 +19,15 @@ There is no cubic surface, hence no 27-line algebra to port.
 ## Character
 Diagonal symmetry group of F: 72 modulo scalars.  The residue character of A is zeta^{0,2,4}
 (computed for every element): trivial on an index-3 subgroup of order 24 (it contains tau and every
-paired sign), and a primitive cube root of unity on the quotient mu3.  cycle-three's Jacobian model
-(T = R v^6, v = alpha) is a quotient on which that mu3 acts trivially, so it only sees invariant
-classes.  On the cubic coordinates the twist is by alpha (character zeta^2 under (0,2,0,2,2,4)):
-A vol = alpha * (invariant density).
+paired sign), and a primitive cube root of unity on the quotient mu3.
+CORRECTION: an earlier version said cycle-three's Jacobian model is a quotient killing this mu3.
+That is wrong: under g = (0,2,0,2,2,4) its passive coordinates c1 = (Y1/X1)/v, c2 = (Y2/X2)/v pick up
+zeta^-2, zeta^2, so the model is not that quotient.  Whether that route can reach this character
+is open; its transport is a first-variation identity built for q = 1.
 
 ## What a construction would need
-1. A model on the triple cover where alpha (or v^2 with T2 = R v^2) is a function, i.e. the
-   cycle-three Jacobian model pulled back along T = T2^3 / R^2, plus a new polynomial-source
-   (seed / lifting / trace) theorem on it.
+1. A primitive theorem on a model that reaches the omega-isotypic sector (an elliptic-family model
+   compatible with the mu3 action), with its own seed / lifting / trace argument.
 2. Pole order two: downstairs the source has degree 6 on a plane cubic (R_6 = 0), so it reduces to
    lower pole order plus base derivatives, i.e. a second variation; the shared HigherResidues
    library (split-ternary) handles a related third-order-pole calculus.
