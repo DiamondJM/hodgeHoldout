@@ -30,3 +30,8 @@ https://github.com/hodge-computer/sextics/discussions/44#discussioncomment-19046
 
 Negative results for `one-reflection-skew` (`comment-skew.md`, notes in `skew/`):
 https://github.com/hodge-computer/sextics/discussions/127#discussioncomment-19134103 (node `DC_kwDOVLOOJc4BI_aX`, discussion `D_kwDOVLOOJc4AqP2y`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-skew.md` and that target.
+
+## cycle-q2 comment
+
+Notes for `cycle-q2` (`comment-cycleq2.md`, analysis in `cycleq2/`):
+https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19135828 (node `DC_kwDOVLOOJc4BI_1U`, discussion `D_kwDOVLOOJc4AqE9c`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-cycleq2.md` and that target.
