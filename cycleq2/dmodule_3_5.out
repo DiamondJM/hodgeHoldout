@@ -1,0 +1,2 @@
+(c1,c2)=(3,5) order <= 1: 3 derivatives, rank of span = 3
+(c1,c2)=(3,5) order <= 2: 6 derivatives, rank of span = 4

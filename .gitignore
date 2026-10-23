@@ -1,2 +1,3 @@
 __pycache__/
 *.pkl
+cycleq2/*.out
