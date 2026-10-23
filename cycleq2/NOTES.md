@@ -155,3 +155,21 @@ So the holomorphic form generates the whole 12-dimensional target sector V_omega
 algebraic classes in the target sector (NS_omega = 0), and T_omega = V_omega.
 The global question is therefore: is Sigma in nabla_1(K^12) + nabla_2(K^12), K = Q(c1,c2),
 for the full rank-12 Gauss-Manin system?
+
+## Toward the global question (sigma_engine.py, degree_probe.py)
+sigma_engine.py evaluates the transported source sigma (12-vector in the normal-form frame) at a point.
+degree_probe.py: in the fixed monomial normal-form frame, the connection entries along c2 = 3 do not
+fit any rational function of total degree <= ~130 in c1 (140 points mod P; evaluation takes ~1s,
+the fitting is the cost).  The monomial frame has spurious poles where its 12 classes become dependent,
+so naive 2-variable reconstruction of Gamma_i is not feasible.
+Reformulation: let B0 = the locus of (c1,c2) where S3 is quasi-smooth.  By the Gysin sequence, removing
+a curve C from the base kills a class only through H^0(C, V|_C), i.e. only along curves where the
+fibres acquire extra algebraic classes in the target sector (Noether-Lefschetz curves).  So the class
+must either vanish in H^2_dR(B0, V_omega) (sections with poles only along the bad locus), or be
+supported over such a Noether-Lefschetz curve.  Deciding it needs either
+  * a good global frame on B0 (e.g. adapted to the Hodge filtration, with poles only on the bad locus)
+    plus a D-module de Rham computation for a rank-12 system on an affine surface; or
+  * a search for Noether-Lefschetz curves in the target sector (curves in the (c1,c2)-plane where
+    rank NS_omega jumps), using the engine's flatness data.
+Both are research-scale.  GHC, if this instance's class lies in the predicted coniveau-1 part, says
+the answer is positive, so the computation would construct a primitive rather than test anything.
