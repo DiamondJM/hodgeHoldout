@@ -38,3 +38,5 @@ https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19135
 
 Progress note on the cycle-three Jacobian route (`comment-cycleq2-progress.md`), posted as a reply:
 https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19148488 (node `DC_kwDOVLOOJc4BJC7I`).
+Update (rank-12 transcendental part, withdrawn rank-4 computation) (`comment-cycleq2-update.md`), posted as a reply:
+https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19152341 (node `DC_kwDOVLOOJc4BJD3V`).
