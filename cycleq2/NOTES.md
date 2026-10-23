@@ -95,3 +95,28 @@ Step 2 (next): S restricted to a fibre over fixed (c1,c2) is a class sigma on th
 S3 (chi = 3, p_g = 2).  The certificate route survives iff sigma has no (0,2) part.  sigma lies in the
 omega-sector, so this is the vanishing of the cup product of sigma with the holomorphic 2-form of the
 omega^2-sector.  That is computable by Griffiths reduction on the weighted surface mod p.
+
+## Step 2: (0,2) test by Griffiths reduction (gm.py, step2.py, solve_rational.py, degree_check.py,
+##          jacobian_ring.py, ks_test.py)
+Fibre surface S3 over fixed (c1,c2): G = y^2 - x^3 - a(rho,tau) x - b(rho,tau) in P(1,1,6,9), degree 18,
+a = rho^12 A((tau/rho)^3), b = rho^18 B((tau/rho)^3).  Weighted Jacobian ring R = Q[rho,tau,x]/(G_rho, G_tau, G_x):
+dim R_1 = 2 (= p_g), R_19 = 28, R_37 = 2 (= h^{0,2}), R_38 = 1 (socle), R_39 = 0, at (c1,c2) = (2,3), (3,5), (1,4).
+The transported source is sigma = Res(P Omega/G^3) + Res(P' Omega/G^2), with
+P = 3 tau^3 (3/4)(A1~ x + B1~)(A2~ x + B2~).  P has weighted degree 33 <= 37 and P' degree 9 <= 19,
+so sigma is a class on the compact surface with no pole along the fibre at infinity, and its
+(0,2)-component is [P] in R_37 (the pole-two term lies in F^1).
+ * P is NOT in J_37 at all three points: fibrewise, sigma has a nonzero transcendental (0,2) part.
+   (Consistently, the fibrewise Gauss-Manin equation G' + G/(3t) + M G = H has no rational solution
+   with denominators t^j Delta^k, j <= 4, k <= 2, deg N <= 40; this test is too strict by itself because
+   it ignores horizontal curves.)
+ * But the 4-fold class is sigma ^ dc1 ^ dc2, and base Gauss-Manin terms (Kodaira-Spencer,
+   multiplication by dG/dc_i : R_19 -> R_37) can absorb a (0,2) part.  dG/dc1 R_19 + dG/dc2 R_19
+   spans all of R_37 at all three points, so P is in J_37 + KS.  No obstruction at the (0,2) level.
+Conclusion: the triple-cover route is NOT ruled out at the Hodge-theoretic (0,2) level, but it cannot
+be fibrewise.  A primitive must vary with (c1,c2), and its base derivatives must cancel the
+transcendental part.  This is the c-direction analogue of cycle-three's first-variation identity;
+cycle-three needed no such terms because p_g = 0 on its model.
+Still open: the (1,1) level.  After the KS correction, the residual (1,1) part must be algebraic,
+i.e. its transcendental (1,1) component must vanish modulo the next KS images (R_1 -> R_19 via dG/dc).
+The full statement is a de Rham computation for the transcendental local system over the
+(c1,c2)-plane.  Caveats from step 1 (s-independence of the multiplier, moving-map corrections) still apply.
