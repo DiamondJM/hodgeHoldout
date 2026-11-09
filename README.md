@@ -42,3 +42,8 @@ Update (rank-12 transcendental part, withdrawn rank-4 computation) (`comment-cyc
 https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19152341 (node `DC_kwDOVLOOJc4BJD3V`).
 Noether-Lefschetz note (`comment-cycleq2-nl.md`), posted as a reply:
 https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19503129 (node `DC_kwDOVLOOJc4BKZgZ`).
+
+## four-plus-two-residual comment
+
+Core equation, denominator tests and norm-contact family size (`comment-fourplustwo.md`, analysis in `fourplustwo/`):
+https://github.com/hodge-computer/sextics/discussions/120#discussioncomment-19504157 (node `DC_kwDOVLOOJc4BKZwd`, discussion `D_kwDOVLOOJc4AqKTi`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-fourplustwo.md` and that target.
