@@ -202,3 +202,13 @@ The cycle-q2 sector (paired parity, numerator h-weight 5) has Hodge numbers (18,
    so (3,1) support in this sector would have to sit over the discriminant or the boundary.  If that
    bookkeeping is right, the paired-ratio fibration is the wrong geometry for this sector and a different
    fibration (e.g. threefold fibres over a curve, as in the book's Chapter 3B) is needed.
+
+## Upstream state on 2026-11-09 (for orientation)
+Same 16 instances open (66/82).  Open upstream PRs: #221 (fqlx, cycle-q2, incomplete: one sorry,
+`missing_rational_correction`), #222 (fqlx, symmetric-sextic-residual, incomplete draft), #223 (benediamond,
+"remaining cycle and symmetric certificate constructions").  #221/#223 hold a partial current with residual
+E(D0,N0) = -F^2 R0 + F^3 Q0 and an equivalent "canonical tangent" equation, with no solution; they credit this
+repo's character analysis.  Book: Ch. 3B (two-reflection theorem) now gives prose existence for
+four-plus-two-residual and symmetric-sextic-residual; sweep/reflections.py confirms no other open instance
+has an X- and a Y-reflection (one-reflection-skew and reflection-coupled-residual have only Y2 -> -Y2).
+Our PRs #129-#133 are closed (unmerged).
