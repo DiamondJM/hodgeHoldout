@@ -4,7 +4,8 @@ Returns the connection matrices Gamma_i (nabla_i e_b = sum_a Gamma_i[a,b] e_a) i
 monomial normal-form frame, with first derivatives via dual numbers."""
 import sympy as sp, pickle, functools
 from flint import nmod_mat, nmod
-P = 1000003
+import os
+P = int(os.environ.get("GMP", "1000003"))
 rho, tau, x, v, c1, c2, t = sp.symbols('rho tau x v c1 c2 t')
 SECTOR = 0
 

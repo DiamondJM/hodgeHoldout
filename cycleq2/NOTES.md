@@ -173,3 +173,32 @@ supported over such a Noether-Lefschetz curve.  Deciding it needs either
     rank NS_omega jumps), using the engine's flatness data.
 Both are research-scale.  GHC, if this instance's class lies in the predicted coniveau-1 part, says
 the answer is positive, so the computation would construct a primitive rather than test anything.
+
+## Noether-Lefschetz search (nl_disc.py, nl_line.py, ks_scan.py) -- 2026-11-09
+Upstream context: the book's new section 4.6 independently records the (3,3) surface, p_g = 2 and the
+(1,10,1) nontrivial sectors; section 4.5 (coefficient raising) is the second-variation identity used here:
+cycle-q2 follows from a q=1 certificate for X0X1X2Y0Y1Y2 over the generic member of F + s X0X1X2^2Y0Y1.
+The cycle-q2 sector (paired parity, numerator h-weight 5) has Hodge numbers (18, 78, 18).
+
+1. Ordinary NL curves (extra (1,1) classes).  Delta(t) = 4a^3 + 27b^2 is irreducible of degree 12 in t
+   (12 fibres of type I1 on cycle-three's rational elliptic surface; 36 on the triple cover).
+   Along the line c2 = 3, disc_t(Delta) has degree 444 in c1 and factors as
+     c1^150 * (deg 38)^3 * (deg 54)^2 * (deg 72)^1,
+   where the degree-38 factor is Res_t(a,b) (cusp fibres, no new class).  The degree-54 (multiplicity 2)
+   and degree-72 (multiplicity 1) factors are curves where two I1 fibres merge with a, b nonzero: the
+   Weierstrass surface gets an A1 point and its resolution an extra (-2)-curve.  On the triple cover this
+   happens at the three points tau^3 = t0, permuted by the deck group, so each nontrivial sector gains
+   one algebraic class there.  These are genuine NL curves for the target sector, but their Gysin images
+   on the fourfold are of type (2,2) only (surfaces swept by the (-2)-curves).
+2. Flat holomorphic forms.  A vertical divisor over a base curve C supports a (3,1) class only through a
+   flat section of type (2,0) along C, which forces Kodaira-Spencer to kill s in the tangent direction
+   of C at every point of C.  Scan of all (c1,c2) in (F_p^*)^2, p = 101, 211, 307: rank{s, nabla_1 s,
+   nabla_2 s} = 3 at every quasi-smooth point (0 exceptions among 10000, 44100, 93636 points; 100, 216,
+   297 points have a singular surface, a curve's worth).  So there is no such curve in the quasi-smooth
+   locus; only the discriminant curve and the coordinate boundary remain, and the engine cannot test those.
+3. Tentative consequence (NOT a proof; the Leray bookkeeping for horizontal divisors needs checking,
+   in particular tube classes over base curves where a curve family degenerates): with NS_omega = 0
+   generically, horizontal divisors contribute nothing to H^2(B, V_omega) at the level of graded pieces,
+   so (3,1) support in this sector would have to sit over the discriminant or the boundary.  If that
+   bookkeeping is right, the paired-ratio fibration is the wrong geometry for this sector and a different
+   fibration (e.g. threefold fibres over a curve, as in the book's Chapter 3B) is needed.
