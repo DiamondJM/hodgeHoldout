@@ -35,3 +35,15 @@ The book's own route (2.8 moving-point currents) needs a core that is even in on
 this core is not; the maintainers' open PRs (#222, #223) target symmetric-sextic-residual instead.
 Risks: step 1-2 may give a surface of degree > 35 (then the linear test is out of reach here);
 the support may need several families; and the maintainers may solve it first with their machinery.
+
+## Step 1 result (normcontact.py, nc_count.py) -- 2026-11-09
+After u = q(x) the presentation is  H + q^3 = h sigma(h) + Q M  (q, Q even quadrics, h cubic, M even
+quartic); with the gauge fixed it is 44 equations in 44 unknowns.  Complex Newton from random starts
+converges in ~80% of trials to non-degenerate solutions (residual 1e-14, Jacobian nonsingular, Q of
+rank 4): norm-contact curves exist on this exact core.
+But: 3065 converged starts at one value of the family parameter gave 3065 DISTINCT solutions, no repeat.
+So the parameter curve has more than ~1.5 million sheets over the gauge parameter (birthday bound), and
+the surface swept by the whole family has correspondingly enormous degree.  Steps 2-3 as planned
+(eliminate the swept surface, then a degree <= 35 linear test) are not feasible.
+What could still work: low-degree components of the parameter curve (special sub-families defined over
+a small field), or a different, lower-degree family of curves on T.  Neither is in hand.
