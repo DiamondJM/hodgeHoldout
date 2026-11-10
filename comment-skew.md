@@ -19,7 +19,7 @@ This does **not** exclude reductions with two active $X$ coordinates, or passive
 
 **5. Supports and deformation (modular, $p=268435399$).** None of the 55 natural degree-6 supports carries $A$: the 3-subsets and 2–4-subsets of sixth powers, and every coordinate sub-equation of $F$ containing a coupling. On the **solved** one-reflection, $s^2+T^2$, $S^2+T^2$ and $T^2-s^2/3$ carry none of $A$, $A_\pm$ either, while the accepted support is `fqlx`'s degree-30 $D_+$. So low-degree negatives on this family are weak evidence. I reproduced `fqlx`'s half-certificate mod a prime with $\sqrt3$; both identities hold exactly. A first-order deformation of it along the skew term is a linear system with about $1.4\times10^6$ unknowns against $4.1\times10^6$ degree-60 rows, because $D_+$ is semi-invariant only under $\tau$. I did not attempt it.
 
-**Reproduction.** https://github.com/DiamondJM/hodgeHoldout, branch `claude/inspiring-turing-tx2pbu`: `skew/NOTES.md`, `skew/groebner/*.sing`, `skew/fibration.py`, `skew/fqlx_cert.py`, `skew/supp.py`, `sweep/fixed_d.py`.
+**Reproduction.** Scripts (not linked here, in line with the discussion link policy; available as an attachment on request): `skew/NOTES.md`, `skew/groebner/*.sing`, `skew/fibration.py`, `skew/fqlx_cert.py`, `skew/supp.py`, `sweep/fixed_d.py`.
 
 Credit: `fqlx`'s one-reflection and holdout constructions; `fringewidth`'s identification of the hidden reflections; the repository authors' certificate formalism, prescribed-support theorem and character framework, with the certificate bridge attributed there to Benjamin E. Diamond; Griffiths's residue theory. Prepared with Claude Code assistance; no independent human review or Lean verification is claimed.
 

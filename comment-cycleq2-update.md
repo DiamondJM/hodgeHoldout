@@ -12,7 +12,7 @@ The engine passes three checks: the ring dimensions (sector $(1,10,1)$, socle in
 
 In the fixed normal-form monomial frame, the connection entries along $c_2=3$ have $c_1$-degree above about 130, much of it from spurious poles of the frame. Direct rational reconstruction is therefore not a practical route; a good global frame or a Noether–Lefschetz search would be needed. If this instance's class lies in the coniveau-one part predicted by the generalized Hodge conjecture, the answer is positive, and such a computation would construct the primitive rather than test anything.
 
-**Reproduction.** https://github.com/DiamondJM/hodgeHoldout, branch `claude/inspiring-turing-tx2pbu`, `cycleq2/`: `gm_engine.py`, `gm_jets.py` (connection, jets, derivative spans: `python3 gm_jets.py 2 3 6`), `sigma_engine.py`, `degree_probe.py`, and `NOTES.md`.
+**Reproduction.** Scripts (not linked here, in line with the discussion link policy; available as an attachment on request): `gm_engine.py`, `gm_jets.py` (connection, jets, derivative spans: `python3 gm_jets.py 2 3 6`), `sigma_engine.py`, `degree_probe.py`, and `NOTES.md`.
 
 Credit as in the note above: `hodgepodgeconjecture`'s cycle-three construction and Jacobian model, Griffiths's residue theory, and the repository authors' certificate formalism. Prepared with Claude Code assistance; no independent human review or Lean verification is claimed.
 

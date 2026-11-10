@@ -2,7 +2,7 @@ Progress on **cycle-q2** along the cycle-three Jacobian route, prepared with Cla
 
 **1. The q=2 target is a mixed second variation (exact).** $A=m_1m_2$ with $m_1=X_0X_1X_2Y_0Y_1Y_2$ and $m_2=X_0X_1X_2^2Y_0Y_1$, so
 $$2A\,\Omega/F^3=\partial_{s_1}\partial_{s_2}\bigl(\Omega/F_s\bigr)\big|_{s=0},\qquad F_s=F+s_1m_1+s_2m_2 .$$
-In the chart of `hodgepodgeconjecture`'s [cycle-three proof](https://github.com/hodge-computer/sextics/blob/main/data/cycle-three/solution.md) ($v=Y_0/X_0$, $c_1=(Y_1/X_1)/v$, $c_2=(Y_2/X_2)/v$), both directions add an $xyz$ term to the ternary cubic, with coefficients $g_1=v^3c_1c_2$ and $g_2=v^2c_1$.
+In the chart of `hodgepodgeconjecture`'s [cycle-three proof](https://hodge.computer/#case/cycle-three/solution) ($v=Y_0/X_0$, $c_1=(Y_1/X_1)/v$, $c_2=(Y_2/X_2)/v$), both directions add an $xyz$ term to the ternary cubic, with coefficients $g_1=v^3c_1c_2$ and $g_2=v^2c_1$.
 
 **2. Jacobian invariants with an $xyz$ term.** For $U=ax^3+by^3+cz^3+dx^2y+ey^2z+fz^2x+m\,xyz$, the Hessian syzygy $H(H(U))=\lambda U+\mu H(U)$ gives, in cycle-three's normalization ($\eta^2=\xi^3+s_4\xi-s_6/4$):
 $$48s_4=48(ae^2f+bdf^2+cd^2e)+216abc\,m-24def\,m-m^4,$$
@@ -24,7 +24,7 @@ In the target sector, Kodaira–Spencer maps $R_1\to R_{19}$ injectively (image 
 
 **What is open.** Below the $(0,2)$ layer there is no pointwise test: on a two-dimensional base the derivatives of a correction can be prescribed freely at a point. The remaining question is global. Does $\Sigma$ vanish in the de Rham cohomology of the target-sector Gauss–Manin system (rank 12, transcendental part of rank $\ge4$) over $\mathbb C(c_1,c_2)$, modulo algebraic classes? That is a two-variable rational-integrability problem. If it has a solution, the primitive must vary with $(c_1,c_2)$: a $c$-direction analogue of cycle-three's first-variation identity, which cycle-three never needed. Caveats for an actual certificate: the multiplier $-144Rv^3$ should be re-derived with the $xyz$ term (it comes from a covariant identity valid for all ternary cubics), and the second-order moving-map correction must be written out.
 
-**Reproduction.** https://github.com/DiamondJM/hodgeHoldout, branch `claude/inspiring-turing-tx2pbu`, directory `cycleq2/`: `model_check.py`, `triple_cover.py`, `invariants.py`, `inv_check.py`, `second_variation.py`, `gm.py`, `step2.py`, `solve_rational.py`, `jacobian_ring.py`, `ks_test.py`, `sectors.py`, with the derivation in `NOTES.md`.
+**Reproduction.** Scripts (not linked here, in line with the discussion link policy; available as an attachment on request): `model_check.py`, `triple_cover.py`, `invariants.py`, `inv_check.py`, `second_variation.py`, `gm.py`, `step2.py`, `solve_rational.py`, `jacobian_ring.py`, `ks_test.py`, `sectors.py`, with the derivation in `NOTES.md`.
 
 Credit: `hodgepodgeconjecture`'s cycle-three construction, Jacobian model and chart, on which all of this builds; the classical invariant theory of ternary cubics, with the normalization following Tom Fisher as in that proof; Griffiths's residue theory and the Jacobian-ring description of weighted hypersurfaces; the repository authors' certificate formalism, with the certificate bridge attributed there to Benjamin E. Diamond. Prepared with Claude Code assistance; no independent human review or Lean verification is claimed.
 

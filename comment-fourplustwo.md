@@ -18,7 +18,7 @@ with $q,Q$ $\sigma$-even quadrics, $h$ a cubic and $M$ a $\sigma$-even quartic. 
 
 At one value $t_0=0.37+0.21i$, however, 3065 converged starts gave 3065 pairwise distinct solutions. Under uniform sampling that puts the number of solutions above about $1.5\times10^6$ at the 95% level; non-uniform Newton basins only strengthen the bound. The parameter curve therefore has at least that many sheets over this gauge coordinate, and the surface swept by the full family has correspondingly large degree. Eliminating that surface and running the linear test of item 2 on it is not feasible. An explicit primitive along these lines would need a low-degree component of the parameter curve, or a different and smaller family of curves on $T$.
 
-**Reproduction.** https://github.com/DiamondJM/hodgeHoldout, branch `claude/inspiring-turing-tx2pbu`, directory `fourplustwo/`: `transfer.py` (item 1), `core4.py` and `core4_sweep.py` (item 2), `normcontact.py` and `nc_count.py` (item 3; numpy and scipy), and `NOTES.md`.
+**Reproduction.** Scripts (not linked here, in line with the discussion link policy; available as an attachment on request): `transfer.py` (item 1), `core4.py` and `core4_sweep.py` (item 2), `normcontact.py` and `nc_count.py` (item 3; numpy and scipy), and `NOTES.md`.
 
 Credit: the suspension theorem and the norm-contact construction are the repository authors' (Chapters 2 and 3B), with the curve-correspondence strategy credited there to Voisin; the certificate formalism and its bridge attributed there to Benjamin E. Diamond; Griffiths's residue theory. Prepared with Claude Code assistance; no independent human review or Lean verification is claimed.
 
