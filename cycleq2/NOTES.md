@@ -212,3 +212,25 @@ repo's character analysis.  Book: Ch. 3B (two-reflection theorem) now gives pros
 four-plus-two-residual and symmetric-sextic-residual; sweep/reflections.py confirms no other open instance
 has an X- and a Y-reflection (one-reflection-skew and reflection-coupled-residual have only Y2 -> -Y2).
 Our PRs #129-#133 are closed (unmerged).
+
+## Building on PR #221/#223 (tangent/ct.py, tangent/relax.py) -- 2026-11-10
+State of the upstream drafts (read from the PR branches): both have complete Lean plumbing from an
+explicit primitive to the protected certificate, with one admitted lemma each:
+ * cycle-q2 (#221/#223): `CanonicalTangentSolution` in data/cycle-q2/CanonicalTangents.lean: polynomials
+   (H, P_0..P_4, S) with g^2 tangentBoundary(H,P) + H^2 B = F^2 S, H legal;
+   `certificate_of_canonical_tangent_solution` then gives the certificate.
+ * symmetric-sextic-residual (#222): `RelativePrimitive`: beta_0..2 in the chart function field with
+   E_b beta_0 + E_c beta_1 + E_d beta_2 = rho (a relative primitive on the weighted threefold over C(lambda)).
+So supplying a solution of either explicit equation completes that proof through their code.
+
+Solver for the cycle-q2 equation, self-derived form (y = Y2, g = F_y, T_i = g d_i - F_i d_y, a = A/y):
+   4 g^2 sum_i (H T_i(P_i) - P_i T_i(H)) - H^2 a (48 y^5 - e) = 0 mod F^2,
+giving v = A/(2g) d_y + sum (P_i/H) T_i with 2 v(F) = A and div v = 0 mod F^2.  Reduction mod F^2 in y
+removes the quotient; the diagonal group (432 with scalars) splits everything into character blocks, so a
+degree-6 test has ~90 unknowns (the old 6-variable q=2 test ran out of memory).
+H may be taken y-free (norm) and semi-invariant (product of conjugates) at the cost of degree.
+Exhaustive exclusion by linearisation (unknowns h_j * P and the distinct products h_j h_l):
+   degrees 1..8: all character classes of y-free monomials excluded (p = 1000003), i.e.
+   NO y-free semi-invariant denominator of degree <= 8 solves the canonical tangent equation.
+(A first run reported a survivor at degree 6; it was the trivial relation X0^6 * X1^2Y0^2Y1^2 =
+(X0^3X1Y0Y1)^2 between products, removed by indexing the s-unknowns by distinct products.)
