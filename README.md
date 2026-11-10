@@ -49,3 +49,14 @@ Core equation, denominator tests and norm-contact family size (`comment-fourplus
 https://github.com/hodge-computer/sextics/discussions/120#discussioncomment-19504157 (node `DC_kwDOVLOOJc4BKZwd`, discussion `D_kwDOVLOOJc4AqKTi`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-fourplustwo.md` and that target.
 Canonical-tangent solver and degree <= 9 exclusion (`comment-cycleq2-tangent.md`), posted as a reply on thread 61:
 https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19508138 (node `DC_kwDOVLOOJc4BKauq`).
+
+## Live comments differ from the local files (2026-11-10)
+
+Upstream now forbids links to repositories, repository files and pull requests in discussion comments
+(CONTRIBUTING.md, "Links in discussion comments"). On 2026-11-09/10 `benediamond` edited seven of our comments:
+he replaced the repository links by zip attachments he uploaded, replaced pull-request references by links to
+discussion comments, and substantially rewrote the four-plus-two-residual comment (it no longer claims the
+million-sheet bound). **Do not run `post-discussion` with action `update` from the local `comment*.md` files
+for those seven**: that would discard his edits and attachments. Use action `read` to fetch the live text first,
+and `relink` to fix solution-file links in place. Only `comment-cycleq2-tangent.md` (node `DC_kwDOVLOOJc4BKauq`)
+is still maintained from the local file.
