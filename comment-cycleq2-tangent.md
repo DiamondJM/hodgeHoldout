@@ -11,13 +11,13 @@ I derived this directly from $v=\tfrac{A}{2g}\partial_y+\sum_it_iT_i$, for which
 
 **3. Exhaustive exclusion at low degree.** The $Y_2$-free monomials of degree $d$ fall into at most 72 character classes, of size at most 36 for $d\le12$. Write $H=\sum_jh_jm_j$ over one class. The equation is linear in the products $h_j\cdot(\text{coefficients of }P)$ and in the distinct products $h_jh_l$. If that linear relaxation has no solution with a nonzero product $h_jh_l$, no $H$ in the class solves the equation.
 
-Result: **for every degree $d\le\,$DEGMAX, every class is excluded.** No $Y_2$-free semi-invariant denominator of degree at most DEGMAX solves the canonical tangent equation modulo $p$. Two controls: a source manufactured from random $P$ is reported solvable, and the real source at the same $H$ is not. The $s$-unknowns must be indexed by distinct monomial products: indexing by pairs leaves a spurious kernel vector at degree 6, from $X_0^6\cdot X_1^2Y_0^2Y_1^2=(X_0^3X_1Y_0Y_1)^2$.
+Result: **for every degree $d\le\,$9, every class is excluded.** No $Y_2$-free semi-invariant denominator of degree at most 9 solves the canonical tangent equation modulo $p$. Two controls: a source manufactured from random $P$ is reported solvable, and the real source at the same $H$ is not. The $s$-unknowns must be indexed by distinct monomial products: indexing by pairs leaves a spurious kernel vector at degree 6, from $X_0^6\cdot X_1^2Y_0^2Y_1^2=(X_0^3X_1Y_0Y_1)^2$.
 
-Because of the degree factor in item 2, this excludes the natural low-degree supports in this presentation, not all supports of degree at most DEGMAX.
+Because of the degree factor in item 2, this excludes the natural low-degree supports in this presentation, not all supports of degree at most 9.
 
 **4. Use.** `ct.solve(H)` tests any $Y_2$-free semi-invariant $H$ directly, so a candidate denominator from the saved current or the contact families can be checked in seconds to minutes; by my size estimate (not tested) dense linear algebra should reach degree about 18 on a 16 GB machine.
 
-**Reproduction.** https://github.com/DiamondJM/hodgeHoldout, branch `claude/inspiring-turing-tx2pbu`, `cycleq2/tangent/`: `ct.py` (solver; `python3 ct.py`), `relax.py` (`python3 relax.py 8` reproduces degrees 1 to 8 in about five minutes), `kernel6.py` (the spurious degree-6 relation). Requires python-flint 0.9.
+**Reproduction.** https://github.com/DiamondJM/hodgeHoldout, branch `claude/inspiring-turing-tx2pbu`, `cycleq2/tangent/`: `ct.py` (solver; `python3 ct.py`), `relax.py` (`python3 relax.py 9` reproduces degrees 1 to 9 in about twenty minutes), `kernel6.py` (the spurious degree-6 relation). Requires python-flint 0.9.
 
 Credit: the canonical tangent reduction and its Lean equivalence are `benediamond`'s and `fqlx`'s (#221, #223); this note only supplies a solver for their equation. `hodgepodgeconjecture`'s cycle-three construction and the repository authors' certificate formalism underlie both. Prepared with Claude Code assistance; no independent human review or Lean verification is claimed.
 

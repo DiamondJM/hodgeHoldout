@@ -230,7 +230,7 @@ removes the quotient; the diagonal group (432 with scalars) splits everything in
 degree-6 test has ~90 unknowns (the old 6-variable q=2 test ran out of memory).
 H may be taken y-free (norm) and semi-invariant (product of conjugates) at the cost of degree.
 Exhaustive exclusion by linearisation (unknowns h_j * P and the distinct products h_j h_l):
-   degrees 1..8: all character classes of y-free monomials excluded (p = 1000003), i.e.
-   NO y-free semi-invariant denominator of degree <= 8 solves the canonical tangent equation.
+   degrees 1..9: all character classes of y-free monomials excluded (p = 1000003), i.e.
+   NO y-free semi-invariant denominator of degree <= 9 solves the canonical tangent equation.
 (A first run reported a survivor at degree 6; it was the trivial relation X0^6 * X1^2Y0^2Y1^2 =
 (X0^3X1Y0Y1)^2 between products, removed by indexing the s-unknowns by distinct products.)
