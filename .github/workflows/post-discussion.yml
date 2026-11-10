@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: create (new top-level comment), reply (reply to a top-level comment), or update (edit own comment)
+        description: create (new top-level comment), reply (reply to a top-level comment), update (edit own comment), or read (print the comments named in target_id)
         required: true
         default: create
         type: choice
-        options: [create, reply, update]
+        options: [create, reply, update, read]
       body_file:
         description: Path in this repository to the Markdown body
         required: true
@@ -18,7 +18,7 @@ on:
         required: true
         default: D_kwDOVLOOJc4AqE9G
       target_id:
-        description: For reply, the top-level comment node ID; for update, the comment node ID to replace
+        description: For reply, the top-level comment node ID; for update, the comment node ID to replace; for read, space-separated comment node IDs
         required: false
         default: ""
 
@@ -75,6 +75,15 @@ jobs:
                   comment { id url author { login } }
                 }
               }' >> "$out" 2>&1; rc=$? ;;
+            read)
+              rc=0
+              for cid in $TARGET_ID; do
+                echo "=== $cid" >> "$out"
+                gh api graphql -f id="$cid" -f query='
+                query($id: ID!) { node(id: $id) { ... on DiscussionComment {
+                  url updatedAt lastEditedAt editor { login } isMinimized minimizedReason body } } }' \
+                  --jq '.data.node | "url=\(.url) updatedAt=\(.updatedAt) lastEditedAt=\(.lastEditedAt) editor=\(.editor.login // "-") minimized=\(.isMinimized) \(.minimizedReason // "")\n\(.body)"' >> "$out" 2>&1 || rc=1
+              done ;;
           esac
           echo "exit=$rc" >> "$out"
           echo "rc=$rc" >> "$GITHUB_OUTPUT"
