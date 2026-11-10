@@ -47,3 +47,5 @@ https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19503
 
 Core equation, denominator tests and norm-contact family size (`comment-fourplustwo.md`, analysis in `fourplustwo/`):
 https://github.com/hodge-computer/sextics/discussions/120#discussioncomment-19504157 (node `DC_kwDOVLOOJc4BKZwd`, discussion `D_kwDOVLOOJc4AqKTi`). To revise, dispatch `post-discussion` with action `update`, `body_file=comment-fourplustwo.md` and that target.
+Canonical-tangent solver and degree <= 9 exclusion (`comment-cycleq2-tangent.md`), posted as a reply on thread 61:
+https://github.com/hodge-computer/sextics/discussions/61#discussioncomment-19508138 (node `DC_kwDOVLOOJc4BKauq`).
