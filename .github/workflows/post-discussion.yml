@@ -8,7 +8,7 @@ on:
         required: true
         default: create
         type: choice
-        options: [create, reply, update, read]
+        options: [create, reply, update, read, relink]
       body_file:
         description: Path in this repository to the Markdown body
         required: true
@@ -83,6 +83,22 @@ jobs:
                 query($id: ID!) { node(id: $id) { ... on DiscussionComment {
                   url updatedAt lastEditedAt editor { login } isMinimized minimizedReason body } } }' \
                   --jq '.data.node | "url=\(.url) updatedAt=\(.updatedAt) lastEditedAt=\(.lastEditedAt) editor=\(.editor.login // "-") minimized=\(.isMinimized) \(.minimizedReason // "")\n\(.body)"' >> "$out" 2>&1 || rc=1
+              done ;;
+            relink)
+              # replace links to solution files in the main repository by the published instance pages,
+              # keeping the rest of the live comment (which may carry maintainer edits) byte for byte
+              rc=0
+              for cid in $TARGET_ID; do
+                gh api graphql -f id="$cid" -f query='
+                query($id: ID!) { node(id: $id) { ... on DiscussionComment { body } } }' --jq '.data.node.body' > /tmp/live.md || rc=1
+                sed -E 's#https://github\.com/hodge-computer/sextics/blob/main/data/([a-z0-9-]+)/solution\.md#https://hodge.computer/\#case/\1/solution#g' /tmp/live.md > /tmp/new.md
+                echo "=== $cid: $(diff /tmp/live.md /tmp/new.md | grep -c '^>') line(s) changed, bytes $(wc -c < /tmp/live.md) -> $(wc -c < /tmp/new.md)" >> "$out"
+                if ! cmp -s /tmp/live.md /tmp/new.md; then
+                  gh api graphql -f id="$cid" -F body=@/tmp/new.md -f query='
+                  mutation($id: ID!, $body: String!) {
+                    updateDiscussionComment(input: {commentId: $id, body: $body}) { comment { url } } }' >> "$out" 2>&1 || rc=1
+                fi
+                grep -o 'https://[^) ]*' /tmp/new.md | sort -u >> "$out"
               done ;;
           esac
           echo "exit=$rc" >> "$out"
