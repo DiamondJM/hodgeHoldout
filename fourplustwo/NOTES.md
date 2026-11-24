@@ -47,3 +47,25 @@ the surface swept by the whole family has correspondingly enormous degree.  Step
 (eliminate the swept surface, then a degree <= 35 linear test) are not feasible.
 What could still work: low-degree components of the parameter curve (special sub-families defined over
 a small field), or a different, lower-degree family of curves on T.  Neither is in hand.
+
+## Thread state on 2026-11-24 (discussion 120, read through the `thread`/`read` workflow actions)
+The four-variable core equation is now the common formulation on the thread.
+ * kmehltretter82 (11-16, 11-21): Lean formalisation of the core reduction, Euler gauge and suspension;
+   for any D with H not dividing D, a core certificate is equivalent to the strict system
+       p(H) = A D,   D div p = p(D).
+   Degree-6 diagnostics: admissible D form a 49-dim space W = {D : A D in J(H)} (28 + 21 by parity), the
+   Koszul freedom is 60-dimensional, and projecting to (R_H)_12 gives 35 independent quadrics on P^48.
+ * benediamond (11-17): any degree-6 denominator is D_c(x) + lambda F with [D_c] nonzero in a 33-dim subspace
+   of (R_H)_6; a degree-6 certificate exists iff the strict system has a solution with D sextic.  Open.
+ * Robertboy18 (11-23): could not finish degree 6.  A degree-6 denominator would put the class alpha_A into a
+   proper deck-stable sub-Hodge structure of H^3(T)^- (his bounds 44 and 36 < 48, unreviewed); several shapes
+   of D excluded; direct elimination sized at a 396704 x 350658 Macaulay matrix, not run.  He asks for the
+   full characteristic polynomial of Frobenius on that eigenspace at one prime, to test simplicity.
+ * benediamond (11-06, before our note): an explicit contact family on this core whose cylinder map spans the
+   anti-invariant cohomology; our numerical norm-contact model overlapped with it.
+
+Possible contribution: the Frobenius characteristic polynomial on H^3(T)^- (degree 96 over Q, two conjugate
+degree-48 factors over Q(zeta_3) for p = 1 mod 3; p = 7 is bad because of the 5/7 coefficients).  Point counting
+cannot reach degree 48.  The published p-adic method (Costa-Harvey-Kedlaya, ToricControlledReduction) handles
+degree-6 hypersurfaces in P(1,1,1,1,2); it was cloned but NOT built or run (building third-party code needs
+the user's approval in this environment).
