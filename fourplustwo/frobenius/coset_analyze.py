@@ -81,3 +81,80 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# ---------------------------------------------------------------------------------------------
+# Powers of Frobenius.  A sub-object defined over a number field is only stable under a power
+# Frob^f.  The factor degrees of the characteristic polynomial of Frob^f over Q_p are the same as
+# for Frob unless sigma^k(alpha)/alpha is a root of unity for two distinct conjugate roots.  For a
+# unit root alpha in the unramified extension of degree d write alpha = teich(alpha)(1 + p eps);
+# then alpha^(p^d - 1) = 1 - p eps mod p^2, and sigma^k(alpha)/alpha is a root of unity only if
+# eps mod p is fixed by sigma^k.  So it is enough that eps mod p generates F_{p^d}.
+# Needs the unit-root polynomial mod p^2, i.e. all columns of Frob mod p^3 (the N3 runs).
+from flint import nmod_poly, fmpz_poly
+
+def unit_factors_mod_p2(r, p):
+    d, rows, xin = load(r, p, 'N3'); n = len(xin)
+    M = fmpz_mat(n, n, [(rows[j][1][xin[i]] // p) % p**2 for i in range(n) for j in range(n)])   # Frob/p mod p^2
+    chi = [int(c) % p**2 for c in M.charpoly().coeffs()]
+    chi_p = nmod_poly(chi, p)
+    out = []
+    for h, e in chi_p.factor()[1]:
+        if h.degree() == 1 and int(h[0]) == 0: continue          # the factor T (slope > 0 part)
+        if e != 1: return None                                   # not squarefree mod p
+        c = chi_p // h                                           # coprime to h
+        # one Hensel step: (h + p h1)(c + p c1) = chi mod p^2,  h1 = e c^(-1) mod h
+        prod = fmpz_poly([int(x) for x in h.coeffs()]) * fmpz_poly([int(x) for x in c.coeffs()])
+        diff = [(a - int(prod[i])) for i, a in enumerate(chi)]
+        assert all(x % p == 0 for x in diff)
+        ee = nmod_poly([(x // p) % p for x in diff], p)
+        g, s, t = h.xgcd(c)                                      # s h + t c = 1
+        assert g.degree() == 0
+        h1 = (ee * t * nmod_poly([pow(int(g[0]), -1, p)], p)) % h
+        hh = [int(h[i]) + p * int(h1[i]) for i in range(h.degree() + 1)]
+        out.append((h, nmod_poly(hh, p**2)))
+    return out
+
+def power_stable(r, p):
+    """True if no ratio of two distinct Q_p-conjugate unit roots can be a root of unity."""
+    res = []
+    fs = unit_factors_mod_p2(r, p)
+    if fs is None: return None
+    for h, hh in fs:
+        d = h.degree()
+        if d == 1: res.append((1, True)); continue
+        x = nmod_poly([0, 1], p**2); acc = nmod_poly([1], p**2); e = p**d - 1
+        base = x % hh
+        while e:
+            if e & 1: acc = (acc * base) % hh
+            base = (base * base) % hh; e >>= 1
+        co = [int(acc[i]) - (1 if i == 0 else 0) for i in range(d)]
+        assert all(c % p == 0 for c in co)
+        w = nmod_poly([(c // p) % p for c in co], p)             # = -eps mod p, in F_p[T]/(h)
+        ok = True
+        for l in {q for q in range(2, d + 1) if d % q == 0 and all(q % t for t in range(2, q))}:
+            k = d // l
+            wp = w
+            for _ in range(k):
+                wp = pow_mod(wp, p, h)
+            ok &= (wp != w)
+        res.append((d, ok))
+    return res
+
+def pow_mod(a, e, h):
+    acc = nmod_poly([1], h.modulus()); base = a % h
+    while e:
+        if e & 1: acc = (acc * base) % h
+        base = (base * base) % h; e >>= 1
+    return acc
+
+def powers():
+    primes = sorted({int(f.split('_p')[1].split('_')[0]) for f in os.listdir(D) if f.endswith('_N3.txt')})
+    print('Powers of Frobenius (unit-root polynomials mod p^2): factor degree, "no root-of-unity ratio" certified')
+    for p in primes:
+        for r, name in ((1, 'slope 1'), (2, 'slope 2')):
+            ps = power_stable(r, p)
+            print(f'  p = {p:3d} {name}:', 'not squarefree mod p' if ps is None else ' '.join(f'{d}:{"yes" if ok else "NO"}' for d, ok in sorted(ps)))
+
+if __name__ == '__main__':
+    powers()
