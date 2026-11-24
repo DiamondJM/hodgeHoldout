@@ -10,7 +10,7 @@ Code for the Frobenius note above, inline because the discussion link policy rul
 **What the patch does.** A `dr` object can be restricted to the lattice points $w$ with prescribed residues of linear forms, here $c+d \bmod 2$ and $u \bmod 3$. Two objects are used. The invariant ring (all residues zero) supplies every Jacobian relation and every reduction matrix. The coset module supplies the cohomology basis and the final reduction to it. Frobenius of a coset monomial is reduced along directions of the invariant ring only, so every intermediate monomial stays in the coset. The last step, from pole order $p$ to pole order 1 at a coset point $u$ of the polytope, uses $6u$ written as a sum of six ring points and $(p-1)/6$ steps along each; this needs $p\equiv1\pmod 6$.
 
 <details>
-<summary><code>coset.patch</code>: patch for `dr.h` (apply with `git apply coset.patch` at commit `74cda9e`)</summary>
+<summary><code>coset.patch</code>: patch for <code>dr.h</code>, to be applied at commit 74cda9e</summary>
 
 ````diff
 diff --git a/dr.h b/dr.h
@@ -424,7 +424,7 @@ index 80c4c44..66c951b 100644
 </details>
 
 <details>
-<summary><code>coset_frob.cpp</code>: driver, goes into `examples/`</summary>
+<summary><code>coset_frob.cpp</code>: driver, goes into <code>examples/</code></summary>
 
 ````cpp
 // COSET PATCH driver (not part of the upstream library).
@@ -626,7 +626,7 @@ int main(int argc, char **argv)
 </details>
 
 <details>
-<summary><code>make_input.py</code>: input line for $T$: torus coordinates $(b,c,d,u)$, polytope $b+c+d+2u\le6$</summary>
+<summary><code>make_input.py</code>: input line for T: torus coordinates (b, c, d, u), polytope b + c + d + 2u ≤ 6</summary>
 
 ````python
 """Input line for ToricControlledReduction (Costa-Harvey-Kedlaya): the core threefold
@@ -645,7 +645,7 @@ print(f"core_p{p}:{fmt(list(f.keys()))}:{fmt(list(f.values()))}:{fmt(A)}:{fmt(b)
 </details>
 
 <details>
-<summary><code>run_coset.sh</code>: runs the two $\sigma$-odd deck pieces at one prime</summary>
+<summary><code>run_coset.sh</code>: runs the two σ-odd deck pieces at one prime</summary>
 
 ````bash
 #!/bin/bash
