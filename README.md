@@ -68,8 +68,15 @@ prose existence proofs for three open instances: `cycle-q2` (Chapter 3D), `four-
 and `quadric-contact-residual` (section 3D.8). `fqlx` is formalising the `cycle-q2` existence argument in Lean
 (upstream pull requests 221 and 245, still open).
 
-Blocked here: the `HODGE_DISCUSSION_TOKEN` secret returns "Bad credentials" (runs of 2026-11-24), so the
-`post-discussion` and `pr-status` workflows cannot read or post until the token is replaced.
+The `HODGE_DISCUSSION_TOKEN` secret was replaced on 2026-11-24; the `post-discussion` and `pr-status` workflows
+work again.
+
+Frobenius on the anti-invariant cohomology of the core threefold of `four-plus-two-residual`
+(`fourplustwo/frobenius/`, details in `fourplustwo/NOTES.md`): ToricControlledReduction was patched to work on
+one symmetry piece. At twelve primes Frobenius is ordinary, and the factor degrees exclude any proper
+Frobenius-compatible deck-stable sub-object. The exact characteristic polynomial was not obtained.
+`comment-fourplustwo-frobenius.md` is the draft note for discussion 120 (not posted yet);
+`attachments/coset-frobenius.zip` is the matching attachment.
 
 Pending by hand: the solver note on the cycle-q2 thread (node `DC_kwDOVLOOJc4BKauq`) still says its scripts are
 available on request. `attachments/cycle-tangent-solver.zip` is ready to attach to that comment in the browser.

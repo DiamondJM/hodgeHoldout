@@ -71,7 +71,7 @@ degree-6 hypersurfaces in P(1,1,1,1,2); it was cloned but NOT built or run (buil
 the user's approval in this environment).
 
 ## Frobenius computation: status on 2026-11-24 (frobenius/)
-Software: edgarcosta/ToricControlledReduction (GPL), built from source with the user's approval; it reproduces
+Software: edgarcosta/ToricControlledReduction (LGPL 2.1), built from source with the user's approval; it reproduces
 its shipped examples and the Dwork quintic through the file interface (`readfile.exe`).
 Input: T: u^3 + H = 0 in P(1,1,1,1,2), chart a = 1, torus coordinates (b,c,d,u), polytope
 {w >= 0, b+c+d+2u <= 6} (`make_input.py`).
@@ -88,3 +88,60 @@ The (sigma-odd, omega) coset has 16, 156, 636, 1780, 4020 points in kP for k = 1
 24616 in total), so its top-level matrix is about 0.3 GB.  The library has no such restriction; it would have
 to be patched (module points in the coset, reduction directions in M'), or run unmodified on a machine with
 several times more memory.
+
+## Frobenius on H^3(T)^-: coset patch and result (2026-11-24, frobenius/)
+Patch (`coset.patch` against commit 74cda9e of ToricControlledReduction, plus the driver `coset_frob.cpp`;
+both derived from LGPL code).  A `dr` object can be restricted to the lattice points in one coset of
+M' = {c+d even, u = 0 mod 3}.  Two objects are used: the invariant ring (trivial coset) supplies every
+Jacobian relation and every reduction matrix; the coset module supplies the basis, pi/rho and the last
+reduction.  Frobenius of a coset monomial is reduced along directions of the invariant ring only, so every
+intermediate monomial stays in the coset.  The last step (pole p -> pole 1 at a coset point u of P) cannot use
+the direction u itself; it uses 6u = sum of six ring points of P and (p-1)/6 steps for each.  Needs p = 1 mod 6.
+`lattice_check.py`: the ring and all five nontrivial cosets are generated in degree 1 (so directions exist).
+
+Sizes for the piece (c+d odd, u = 1 mod 3): dim J' = (1,40,61,6) for the ring, (0,16,76,16) for the module;
+initialisation one minute, 16 Frobenius columns at N = 2 in ten seconds.
+
+Validation.
+ * `validate/validate.py`: on y^2 = sextic in x^2 (involution) and on a Picard curve (order 3, asymmetric Hodge
+   numbers) over F_13, the product of the pieces' characteristic polynomials equals the stock program's zeta
+   polynomial mod 13^3 resp. 13^4.
+ * On T: the trace on the 96-dimensional sigma-odd part, summed over the two deck pieces, equals the point count
+   of `pointcount.py`: 133 mod 19^3, -155 mod 31^3 (runs N3: all columns mod p^3) and 134 mod 67^2.
+ * All entries outside H^3(T) (the complement classes) vanish; pole-m columns are divisible by p^(4-m).
+
+Result (`coset_analyze.py`, data in `data/`).  Hodge numbers (h30,h21,h12,h03): piece 1 (u = 1 mod 3) is
+(0,32,16,0), piece 2 is (0,16,32,0); the pieces are dual.  At p = 19, 31, 37, 43, 61, 67, 73, 79, 103, 109,
+127, 139 (all p = 1 mod 6 below 140 except 13 and 97, which the program rejects as degenerate) Frobenius is
+ordinary: on piece 1 slopes 1 (x16) and 2 (x32).  Degrees of the irreducible factors over Q_p:
+
+    p     slope 1 (16)        slope 2 (32)
+    19    1,1,7,7             6,9,17
+    31    1,15                (not squarefree mod p)
+    37    16                  1,6,25
+    43    1,1,2,3,9           1,1,5,6,7,12
+    61    1,2,13              1,6,25
+    67    1,6,9               2,3,27
+    73    2,3,11              1,3,5,23
+    79    1,2,6,7             1,2,4,12,13
+    103   2,4,10              1,3,12,16
+    109   1,6,9               12,20
+    127   7,9                 1,6,25
+    139   2,5,9               1,2,11,18
+
+Consequence.  Let W be a deck-stable sub-object of H^3(T)^- on which Frobenius has characteristic polynomial
+in Q(omega)[T] at each of these primes and which has Hodge numbers (so: a motivic sub-Hodge structure).  Its
+slope-1 rank is h12 of its piece-1 part and its slope-2 rank is h21, the same at every ordinary prime.
+p = 37 forces the slope-1 rank into {0,16}; p = 19, 37, 67 (also 109, 127) force the slope-2 rank into {0,32}.
+Mixed cases (16,0) and (0,32): all eigenvalues would have valuations (1,2) resp. (2,1) at the two primes above
+p, hence be pi*pibar^2 resp. pi^2*pibar times roots of unity (Kronecker), with at most 16 resp. 32 conjugates
+over Q(omega).  At p = 19 the slope-1 part has factors of degree 7 and the slope-2 part one of degree 17; a
+root of unity of degree 7 (17) over Q_19 has at least 28 (102) conjugates over Q(omega).  So W = 0 or all:
+H^3(T)^- is simple as a Q(omega)-motive, conditional on these (uncertified) numerics.
+Using only the total rank (no Hodge type) the twelve primes leave ranks 1, 6, 7, 16 and their complements.
+
+Not done: the exact characteristic polynomial.  Recovering the coefficients in Z[omega] needs about ten
+digits of relative precision in both pieces (Newton-identity bounds: r1 + r2 > 16 + small for every k >= 16),
+i.e. N about 12; the cost grows like N^5 and the working modulus leaves one machine word.  Out of reach in this
+container; the unit-root data above is what relative precision 1 gives.
+

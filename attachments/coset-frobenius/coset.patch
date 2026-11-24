@@ -1,0 +1,406 @@
+diff --git a/dr.h b/dr.h
+index 80c4c44..66c951b 100644
+--- a/dr.h
++++ b/dr.h
+@@ -417,6 +417,46 @@ class dr{
+ 
+         void frob_matrix(Mat<R> &res, Vec<int64_t> N, int64_t method = DEFAULT_VECTOR_REDUCTION_METHOD);
+ 
++        /*
++         * COSET PATCH (not part of the upstream library)
++         *
++         * Restriction to one isotypic piece of a finite diagonal group action.
++         * The group is the dual of M/M', where M = ZZ^n is the exponent lattice and
++         * M' = {w : LA*w = 0 mod Lmod} is a sublattice containing supp(f).
++         * A dr object with restricted = true only keeps the lattice points w with
++         *      (LA * w)[i] = Lres[i] mod Lmod[i]   for all i.
++         *  - Lres = 0: the invariant ring S' (the "ring object"); all Jacobian relations
++         *    and all reduction matrices are computed here.
++         *  - Lres != 0: the S'-module S^c of one nontrivial coset (the "module object",
++         *    coset_module = true); only its basis, pi/rho and last_reduction are used.
++         * Set these fields before calling init().
++         */
++        bool restricted = false;
++        bool coset_module = false;
++        Mat<int64_t> LA;
++        Vec<int64_t> Lmod, Lres;
++        // v is an (n + 1)-tuple (d, w)
++        bool in_coset(const Vec<int64_t> &v) const
++        {
++            for(int64_t i = 0; i < LA.NumRows(); i++)
++            {
++                int64_t t = 0;
++                for(int64_t j = 0; j < n; j++)
++                    t += LA[i][j] * v[j + 1];
++                t = ((t - Lres[i]) % Lmod[i] + Lmod[i]) % Lmod[i];
++                if(t != 0)
++                    return false;
++            }
++            return true;
++        }
++        // called on the ring object; mod is the object of the coset (it may be the ring object itself)
++        // ex = exponent of M/M', we need p = 1 mod ex so that Frobenius preserves the cosets
++        // F \in mod.P_1 + mod.J_2 + ...
++        void frob_monomial_coset(Vec<R> &F, const Vec<int64_t> &w, int64_t N, dr<R> &mod, int64_t ex, int64_t method = DEFAULT_VECTOR_REDUCTION_METHOD);
++        // rows [start, end) of the list of basis elements of mod.basis_dr_X; res has one row per basis element
++        // and mod.dim_dr_Y columns (coordinates in mod.basis_dr_Y)
++        void frob_rows_coset(Mat<R> &res, Vec<int64_t> N, dr<R> &mod, int64_t ex, int64_t start, int64_t end, int64_t method = DEFAULT_VECTOR_REDUCTION_METHOD);
++
+ 
+ 
+         /*
+@@ -554,7 +594,9 @@ void dr<R>::init(const int64_t &p, const map< Vec<int64_t>, R, vi64less> &f, con
+     {
+         init_solve_and_cokernels();
+         init_rho_and_pi_matrices();
+-        init_inclusion_matrices();
++        // COSET PATCH: the inclusion J' -> S^c is applied in frob_monomial_coset
++        if(not coset_module)
++            init_inclusion_matrices();
+         init_last_reduction();
+         init_proj();
+     }
+@@ -582,9 +624,31 @@ void dr<R>::init_tuples()
+             v[i] = fit->first[i + 1];
+         fkeys.append(v);
+     }
+-    integral_points(tuple_list, tuple_int_list, AP, bP, fkeys, n + 2);
++    if(not restricted)
++        integral_points(tuple_list, tuple_int_list, AP, bP, fkeys, n + 2);
++    else
++    {
++        // COSET PATCH: keep only the points of the coset
++        Vec< Vec< Vec<int64_t> > > full_list, full_int_list;
++        integral_points(full_list, full_int_list, AP, bP, fkeys, n + 2);
++        coset_module = false;
++        for(i = 0; i < Lres.length(); i++)
++            if( Lres[i] % Lmod[i] != 0 )
++                coset_module = true;
++        tuple_list.SetLength(n + 2);
++        tuple_int_list.SetLength(n + 2);
++        for(int64_t d = 0; d < n + 2; d++)
++        {
++            for(i = 0; i < full_list[d].length(); i++)
++                if( in_coset(full_list[d][i]) )
++                    tuple_list[d].append(full_list[d][i]);
++            for(i = 0; i < full_int_list[d].length(); i++)
++                if( in_coset(full_int_list[d][i]) )
++                    tuple_int_list[d].append(full_int_list[d][i]);
++        }
++    }
+ 
+-    assert_print(tuple_list[0].length(), ==, 1);
++    assert_print(tuple_list[0].length(), ==, (coset_module ? 0 : 1));
+     assert_print(tuple_int_list[0].length(), ==, 0 );
+ 
+     tuple_dict.SetLength(n + 2);
+@@ -725,7 +789,8 @@ void dr<R>::init_solve_and_cokernels()
+     for(i = 0; i < n + 2; i++)
+     {
+         cokernels_J_dimensions[i] = conv< long >( coeff(P, i) );
+-        if(cokernels_J_dimensions[i] == 0)
++        // COSET PATCH: for a nontrivial coset S^c_0 = 0
++        if(cokernels_J_dimensions[i] == 0 and not (coset_module and i == 0))
+         {
+             this->max_pole = i - 1;
+             break;
+@@ -747,6 +812,13 @@ void dr<R>::init_solve_and_cokernels()
+     solve_denom.SetLength(max_pole + 2);
+     for(i =0; i <= max_pole + 1; i++)
+     {
++        if(i == 0 and coset_module)
++        {
++            // COSET PATCH: S^c_0 = 0
++            solve_denom[0] = 1;
++            cokernels_J_basis[0].SetLength(0);
++            continue;
++        }
+         if(i == max_pole + 1 and verbose > 1)
+             cout << "Asserting that the hypersurface is non degenerate" << endl;
+ 
+@@ -767,7 +839,19 @@ void dr<R>::init_solve_and_cokernels()
+         {
+             initB.SetLength(0);
+         }
+-        solve_system(B, solve_matrix[i], solve_denom[i], J, initB);
++        if( J.NumCols() == 0 )
++        {
++            // COSET PATCH: no relations in this degree (S^c_{i-1} = 0), J_i = P_i
++            B.SetLength(J.NumRows());
++            for(j = 0; j < J.NumRows(); j++)
++                B[j] = j;
++            solve_matrix[i].SetDims(J.NumRows(), J.NumRows());
++            for(j = 0; j < J.NumRows(); j++)
++                solve_matrix[i][j][j] = 1;
++            solve_denom[i] = 1;
++        }
++        else
++            solve_system(B, solve_matrix[i], solve_denom[i], J, initB);
+         if(B.length() != cokernels_J_dimensions[i])
+         {
+             cout<<"dr::Something went wrong, perhaps the hypersurface is not nondegenerate..."<<endl;
+@@ -847,14 +931,15 @@ void dr<R>::init_cokernels_I_basis()
+         reverse_dict(cokernels_I_basis_dict[d], cokernels_I_basis[d]);
+         cokernels_I_dimensions[d] = cokernels_I_basis[d].length();
+         hodge_numbers[d - 1] = cokernels_I_basis[d].length();
+-        if( hodge_numbers[d - 1] == 0 and 2*d <  n + 1 )
++        // COSET PATCH: an isotypic piece need not be Hodge symmetric
++        if( not restricted and hodge_numbers[d - 1] == 0 and 2*d <  n + 1 )
+         {
+             // hodge symmetry implies H^(w -d, d) = H^(d, w-d) = 0
+             max_hi--;
+             hodge_numbers[n - 1 - (d - 1)] = 0;
+             cokernels_I_basis[n - d + 1].SetLength(0);
+         }
+-        if( 2*d >  n + 1) // d - 1 > (n - 1)- ( d - 1)
++        if( not restricted and 2*d >  n + 1) // d - 1 > (n - 1)- ( d - 1)
+         {
+             if(hodge_numbers[d - 1] != hodge_numbers[(n - 1) - (d -1)] )
+             {
+@@ -884,8 +969,9 @@ void dr<R>::init_cokernels_I_basis(int64_t d)
+ {
+     if(verbose > 2)
+         cout<<"dr::init_cokernels_I_basis("<<d<<")"<<endl;
+-    if(d == 1)
++    if(d == 1 or tuple_int_list[d].length() == 0 or tuple_list[d - 1].length() == 0)
+     {
++        // COSET PATCH: also covers the degenerate cases S^*_d = 0 and S_{d-1} = 0
+         cokernels_I_basis[d] = tuple_int_list[d];
+     }
+     else
+@@ -2151,4 +2237,235 @@ void dr<R>::frob_monomial(Vec<R> &F, const Vec<int64_t> &w, int64_t N, int64_t m
+ }
+ 
+ 
++/*
++ * COSET PATCH (not part of the upstream library)
++ * See the comments in the class declaration.
++ */
++template<typename R>
++void dr<R>::frob_rows_coset(Mat<R> &res, Vec<int64_t> N, dr<R> &mod, int64_t ex, int64_t start, int64_t end, int64_t method)
++{
++    assert_print( mod.max_pole, <=, N.length() );
++    int64_t i, m, pos, row;
++    res.kill();
++    res.SetDims( end - start, mod.dim_dr_Y );
++    pos = 0;
++    row = 0;
++    for(m = 1; m < mod.max_pole + 1; m++)
++    {
++        for(i = 0; i < mod.basis_dr_X[m].length(); i++, pos++)
++        {
++            if(pos < start or pos >= end)
++                continue;
++            if(verbose > 0)
++                cout<<"Computing Frob("<<mod.basis_dr_X[m][i]<<") m = "<<m<<" N = "<<N[m-1]<<endl;
++            frob_monomial_coset(res[row], mod.basis_dr_X[m][i], N[m - 1], mod, ex, method);
++            row++;
++        }
++    }
++}
++
++template<typename R>
++void dr<R>::frob_monomial_coset(Vec<R> &F, const Vec<int64_t> &w, int64_t N, dr<R> &mod, int64_t ex, int64_t method)
++{
++    int64_t i, j, k, m, e, end;
++    if(F.length() != mod.dim_dr_Y)
++        F.SetLength(mod.dim_dr_Y);
++    for(i = 0; i < mod.dim_dr_Y; i++)
++        F[i] = R(0);
++    if(N == 0)
++        return;
++
++    assert_print(p, !=, 0);
++    assert_print((p - 1) % ex, ==, 0);
++    assert_print(max_pole, <=, mod.max_pole);
++    assert( not coset_module );
++
++    init_f_frob_power(N - 1);
++    R fact = R(1);
++
++    map< Vec<int64_t>, Vec<R>, vi64less> H;
++    typename map< Vec<int64_t>, Vec<R>, vi64less>::const_iterator Hit;
++    typename map< Vec<int64_t>, Vec<R>, vi64less>::iterator Hnewit;
++    m = w[0];
++
++    for(e = m + N - 1; e > 0; e--)
++    {
++        map< Vec<int64_t>, Vec<R>, vi64less> Hnew;
++        if( verbose > 1 )
++            cout <<"\t e = "<< e << " keys = " << H.size() << endl;
++
++        //add terms of pole order e
++        if( e >= m )
++        {
++            j = e - m;
++            R Djm;
++            Djm = conv<R>( binomial(m + j - 1, m - 1));
++            if (j%2 != 0)
++                Djm = -Djm;
++            Djm *= conv<R>( binomial(m + N - 1, N -j - 1) );
++
++            typename map< Vec<int64_t>, R, vi64less >::const_iterator fjit;
++            for(fjit = f_frob_power[j].cbegin(); fjit != f_frob_power[j].cend(); fjit++)
++            {
++                if(fjit->second != 0)
++                {
++                    Vec<int64_t> monomial = w + fjit->first;
++                    Hit = H.find(monomial);
++                    if( Hit == H.end() )
++                        H[monomial].SetLength(dim_J, R(0));
++                    H[monomial][0] += Djm * fact * fjit->second;
++                }
++            }
++        }
++
++        end = (e > 1) ? p : p - 1;
++
++        for(i = 0; i < end; i++)
++            fact *= p*e - i - 1;
++
++        Vec<int64_t> shift;
++        if( e > m)
++            shift = w;
++        else
++            shift.SetLength(n + 1, int64_t(0));
++
++        for(Hit = H.cbegin();  Hit != H.end(); Hit++)
++        {
++            const Vec<int64_t> &u = Hit->first;
++            const Vec<R> &G = Hit->second;
++            assert_print(u[0], ==, e);
++            Vec<R> Gnew;
++            R den;
++            Vec<int64_t> final_dest;
++            if( e > 1 )
++            {
++                // a direction in the invariant ring: u - v stays in the coset
++                for(i = 0; i < tuple_list[1].length(); i++)
++                    if( min_P(u - shift - tuple_list[1][i]) <= e - shift[0] - 1)
++                        break;
++                if( i >= tuple_list[1].length() )
++                {
++                    cout << "couldn't find a v for u = "<<u<<endl;
++                    abort();
++                }
++                Vec<int64_t> &v = tuple_list[1][i];
++                Vec<int64_t> dest = p*u - end*v;
++                reduce_vector(Gnew, den, dest, v, end, G, method);
++                assert_print(den, ==, 1);
++                final_dest = u - v;
++                assert_print(p*final_dest, ==, dest);
++            }
++            else
++            {
++                // e = 1: x^(p u) = x^u * prod_l v_l^(k_l) with v_l in the invariant ring,
++                // where ex * u = sum of ex points of P'_1 and k_l = multiplicity * (p - 1)/ex
++                Vec<int64_t> x = ex * u;
++                Vec<int64_t> dirs;
++                for(int64_t lvl = ex; lvl >= 1; lvl--)
++                {
++                    for(i = 0; i < tuple_list[1].length(); i++)
++                        if( min_P(x - tuple_list[1][i]) <= lvl - 1)
++                            break;
++                    if( i >= tuple_list[1].length() )
++                    {
++                        cout << "couldn't decompose ex*u for u = "<<u<<endl;
++                        abort();
++                    }
++                    x = x - tuple_list[1][i];
++                    dirs.append(i);
++                }
++                for(i = 0; i < n + 1; i++)
++                    assert_print(x[i], ==, 0);
++
++                Vec<int64_t> rem = p*u;
++                Gnew = G;
++                for(k = 0; k < dirs.length(); k++)
++                {
++                    // merge the equal directions that follow each other
++                    int64_t mult = 1;
++                    while(k + 1 < dirs.length() and dirs[k + 1] == dirs[k])
++                    {
++                        mult++;
++                        k++;
++                    }
++                    Vec<int64_t> &v = tuple_list[1][dirs[k]];
++                    int64_t steps = mult * ((p - 1)/ex);
++                    Vec<int64_t> dest = rem - steps*v;
++                    Vec<R> Gtmp;
++                    reduce_vector(Gtmp, den, dest, v, steps, Gnew, method);
++                    assert_print(den, ==, 1);
++                    Gnew = Gtmp;
++                    rem = dest;
++                }
++                final_dest = u;
++                assert_print(final_dest, ==, rem);
++            }
++            if( not IsZero(Gnew) )
++            {
++                Hnewit = Hnew.find(final_dest);
++                if( Hnewit == Hnew.end())
++                    Hnew[final_dest] = Gnew;
++                else
++                    Hnewit->second += Gnew;
++            }
++        }
++        H.swap(Hnew);
++    }
++
++    assert_print(mod.last_reduction_den, ==, 1);
++
++    // u * (J'_0 + ... + J'_max_pole) --> mod.P_1 + ... + mod.P_{max_pole + 1}
++    Vec<int64_t> shift_rows, shift_columns;
++    shift_rows.SetLength(max_pole + 1);
++    shift_columns.SetLength(max_pole + 1);
++    int64_t total_columns = 0, total_rows = 0;
++    for(k = 0; k < max_pole + 1; k++)
++    {
++        shift_columns[k] = total_columns;
++        shift_rows[k] = total_rows;
++        total_columns += cokernels_J_dimensions[k];
++        total_rows += mod.tuple_list[k + 1].length();
++    }
++    for(Hit = H.cbegin(); Hit != H.cend(); Hit++)
++    {
++        const Vec<int64_t> &u = Hit->first;
++        const Vec<R> &G = Hit->second;
++        Vec<R> big;
++        big.SetLength(mod.last_reduction.NumCols(), R(0));
++        for(k = 0; k < max_pole + 1; k++)
++            for(j = 0; j < cokernels_J_dimensions[k]; j++)
++            {
++                typename map< Vec<int64_t>, int64_t, vi64less>::const_iterator it;
++                it = mod.tuple_dict[k + 1].find(u + cokernels_J_basis[k][j]);
++                if(it == mod.tuple_dict[k + 1].end())
++                {
++                    cout << "the product is not in the coset: u = "<<u<<" b = "<<cokernels_J_basis[k][j]<<endl;
++                    abort();
++                }
++                big[shift_rows[k] + it->second] += G[shift_columns[k] + j];
++            }
++        F += mod.last_reduction * big;
++    }
++
++    // F *= p^{n - 1}/ factorial(p * (m + N - 1) - 1)
++    R fact_padic;
++    int64_t val;
++    factorial_padic(fact_padic, val, p * (m + N - 1) - 1, p);
++    F *= inv(fact_padic);
++    if(n - 1 >= val)
++        F *= conv<R>(power_ZZ(p, n - 1 - val));
++    else
++    {
++        R ppower = conv<R>(power_ZZ(p, val - (n - 1)));
++        R q, r;
++        for(i = 0; i < F.length(); i++)
++        {
++            divrem_lift(q, r, F[i], ppower);
++            assert( IsZero(r) );
++            F[i] = q;
++        }
++    }
++}
++
++
+ #endif
