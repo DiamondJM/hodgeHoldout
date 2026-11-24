@@ -69,3 +69,22 @@ degree-48 factors over Q(zeta_3) for p = 1 mod 3; p = 7 is bad because of the 5/
 cannot reach degree 48.  The published p-adic method (Costa-Harvey-Kedlaya, ToricControlledReduction) handles
 degree-6 hypersurfaces in P(1,1,1,1,2); it was cloned but NOT built or run (building third-party code needs
 the user's approval in this environment).
+
+## Frobenius computation: status on 2026-11-24 (frobenius/)
+Software: edgarcosta/ToricControlledReduction (GPL), built from source with the user's approval; it reproduces
+its shipped examples and the Dwork quintic through the file interface (`readfile.exe`).
+Input: T: u^3 + H = 0 in P(1,1,1,1,2), chart a = 1, torus coordinates (b,c,d,u), polytope
+{w >= 0, b+c+d+2u <= 6} (`make_input.py`).
+ * p = 13: rejected as degenerate; 13 divides disc h_Y (disc h_X = 3^2 * 29 * 23401711321,
+   disc h_Y = 2^2 * 13 * 1277 * 7237 * 189547).
+ * p = 19: passes that check, then stops: the implementation needs p >= 2(weight+1) + max r = 62.
+ * p = 67 (smallest usable prime; 67 = 1 mod 6): killed by the kernel at 14 GB (container limit 15 GB).
+   The top-level dense solve matrix alone is 5*|4P| x |5P| = 55055 x 24616, about 10.8 GB.
+Independent point counts (`pointcount.py`): Tr(Frob | H^3(T)) = 97, 207, -812, 376 at p = 13, 19, 31, 67, and on
+the sigma-odd part 78, 133, -155, 134.  These are the check values for any Frobenius computation.
+Way to make it fit: the exponents of f generate the sublattice M' = {u = 0 mod 3, c+d even} of index 6, so the
+graded module splits into 6 cosets = characters of (deck, sigma), preserved by Frobenius when p = 1 mod 6.
+The (sigma-odd, omega) coset has 16, 156, 636, 1780, 4020 points in kP for k = 1..5 (130, 1036, 4015, 11011,
+24616 in total), so its top-level matrix is about 0.3 GB.  The library has no such restriction; it would have
+to be patched (module points in the coset, reduction directions in M'), or run unmodified on a machine with
+several times more memory.
