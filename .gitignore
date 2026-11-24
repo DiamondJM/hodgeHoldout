@@ -1,3 +1,6 @@
 __pycache__/
 *.pkl
 cycleq2/*.out
+fourplustwo/frobenius/run*.log
+fourplustwo/frobenius/out*.txt
+fourplustwo/frobenius/test_*.txt
