@@ -60,3 +60,16 @@ million-sheet bound). **Do not run `post-discussion` with action `update` from t
 for those seven**: that would discard his edits and attachments. Use action `read` to fetch the live text first,
 and `relink` to fix solution-file links in place. Only `comment-cycleq2-tangent.md` (node `DC_kwDOVLOOJc4BKauq`)
 is still maintained from the local file.
+
+## State on 2026-11-24
+
+Upstream: 67 of 82 solved (`symmetric-sextic-residual` accepted 2026-11-23, by `benediamond`). The book now has
+prose existence proofs for three open instances: `cycle-q2` (Chapter 3D), `four-plus-two-residual` (Chapter 3B)
+and `quadric-contact-residual` (section 3D.8). `fqlx` is formalising the `cycle-q2` existence argument in Lean
+(upstream pull requests 221 and 245, still open).
+
+Blocked here: the `HODGE_DISCUSSION_TOKEN` secret returns "Bad credentials" (runs of 2026-11-24), so the
+`post-discussion` and `pr-status` workflows cannot read or post until the token is replaced.
+
+Pending by hand: the solver note on the cycle-q2 thread (node `DC_kwDOVLOOJc4BKauq`) still says its scripts are
+available on request. `attachments/cycle-tangent-solver.zip` is ready to attach to that comment in the browser.
