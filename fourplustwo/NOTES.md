@@ -112,7 +112,8 @@ Validation.
 
 Result (`coset_analyze.py`, data in `data/`).  Hodge numbers (h30,h21,h12,h03): piece 1 (u = 1 mod 3) is
 (0,32,16,0), piece 2 is (0,16,32,0); the pieces are dual.  At p = 19, 31, 37, 43, 61, 67, 73, 79, 103, 109,
-127, 139 (all p = 1 mod 6 below 140 except 13 and 97, which the program rejects as degenerate) Frobenius is
+127, 139 (all p = 1 mod 6 below 140 except 7, which divides the denominators of H, and 13 and 97, which the
+program rejects as degenerate) Frobenius is
 ordinary: on piece 1 slopes 1 (x16) and 2 (x32).  Degrees of the irreducible factors over Q_p:
 
     p     slope 1 (16)        slope 2 (32)
