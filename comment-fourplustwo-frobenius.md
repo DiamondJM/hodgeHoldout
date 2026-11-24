@@ -6,8 +6,8 @@ Frobenius data for **four-plus-two-residual**, in reply to `Robertboy18`'s reque
 
 **2. Method.** Controlled reduction in $p$-adic cohomology (Costa, Harvey and Kedlaya, *Zeta functions of nondegenerate hypersurfaces in toric varieties via controlled reduction in p-adic cohomology*, ANTS XIII), using Costa's implementation `ToricControlledReduction`. Unmodified, it needs more than 15 GB on $T$. The exponents of the equation lie in a sublattice of index 6, so I patched the library to work on one coset of that sublattice: the lattice points of one piece, with all reductions done in the invariant ring. Checks:
 - on two curves with automorphisms of order 2 and 3, the product over the pieces equals the unpatched program's zeta polynomial;
-- on $T$, the trace on the 96-dimensional part equals my own point count: $133$ modulo $19^3$, $-155$ modulo $31^3$, and $134$ modulo $67^2$;
-- the traces on the two pieces separately agree with `kmehltretter82`'s eigen-traces $a+b\zeta$ at $p=19,31,37,43,61$ (modulo $p^3$ at 19 and 31, to the computed precision $p^2$ at the others).
+- on $T$, the trace on the 96-dimensional part equals my own point count: $133$ modulo $19^3$, $-155$ modulo $31^3$, and $134$ modulo $67^3$;
+- the traces on the two pieces separately agree with `kmehltretter82`'s eigen-traces $a+b\zeta$ at $p=19,31,37,43,61$ (modulo $p^3$ at 19, 31 and 37, modulo $p^2$ at 43 and 61).
 
 **3. Result.** At each of $p=19,31,37,43,61,67,73,79,103,109,127,139$ Frobenius on $M_1$ is ordinary, with slopes $1$ (16 times) and $2$ (32 times). These are all primes $p\equiv1\pmod6$ below 140 except 13 and 97, which the program rejects as degenerate. Degrees of the irreducible factors over $\mathbb Q_p$:
 
@@ -37,7 +37,7 @@ So $W=0$ or $W=H^3(T)^-$. The Hodge type is used: with the total rank alone, ran
 
 So, conditionally on these numerics, $H^3(T)^-$ has no proper nonzero deck-stable sub-Hodge structure of geometric origin. The one in the degree-six argument above comes from $H^1$ of a surface, so it is of that kind, and degree six would be excluded if the bounds 44 and 36 hold. I have not checked those bounds.
 
-**5. What is missing.** The exact characteristic polynomial. Recovering its coefficients in $\mathbb Z[\omega]$ needs about ten $p$-adic digits beyond the Hodge polygon in both pieces (my estimate from the Newton-identity bounds). The cost grows like the fifth power of the number of digits and is out of reach on the 15 GB machine I used. Available now: the slope-1 polynomials modulo $p$ of both pieces at the twelve primes, and the full Frobenius matrices modulo $p^3$ at $p=19$ and $31$.
+**5. What is missing.** The exact characteristic polynomial. Recovering its coefficients in $\mathbb Z[\omega]$ needs about ten $p$-adic digits beyond the Hodge polygon in both pieces (my estimate from the Newton-identity bounds). The cost grows like the fifth power of the number of digits and is out of reach on the 15 GB machine I used. Available now: the slope-1 polynomials modulo $p$ of both pieces at the twelve primes, and the full Frobenius matrices modulo $p^3$ at $p=19,31,37,67$.
 
 **Reproduction.** A patch against `ToricControlledReduction`, a driver, the analysis script and the output data (not linked here, in line with the discussion link policy; available as an attachment on request). Initialisation takes about a minute per piece and prime, the Frobenius columns seconds.
 

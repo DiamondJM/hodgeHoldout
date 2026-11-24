@@ -15,6 +15,8 @@ import sys, os
 from flint import nmod_mat, fmpz_mat
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 POINTCOUNT = {19: 133, 31: -155, 67: 134}        # trace on the sigma-odd part, from pointcount.py
+# kmehltretter82's eigen-traces a + b*zeta on V_zeta (discussion 120, 2026-11-21); the sum over both pieces is 2a - b
+EIGENTRACE = {19: (76, 19), 31: (-93, -31), 37: (-296, -185), 43: (215, 215), 61: (-61, -122)}
 
 def load(r, p, tag):
     d = {}; rows = {}
@@ -77,7 +79,9 @@ def main():
             assert B.charpoly() == unit_poly(r, p, 'N2')[1]
         t = tot % p**3
         t = t if t < p**3 // 2 else t - p**3
-        print(f'  p = {p}: full 96-dimensional trace mod p^3 = {t}; point count {POINTCOUNT.get(p)}')
+        et = EIGENTRACE.get(p)
+        print(f'  p = {p}: full 96-dimensional trace mod p^3 = {t}; point count {POINTCOUNT.get(p)}; '
+              f'from the posted eigen-traces {None if et is None else 2*et[0] - et[1]}')
 
 if __name__ == '__main__':
     main()

@@ -107,7 +107,7 @@ Validation.
    numbers) over F_13, the product of the pieces' characteristic polynomials equals the stock program's zeta
    polynomial mod 13^3 resp. 13^4.
  * On T: the trace on the 96-dimensional sigma-odd part, summed over the two deck pieces, equals the point count
-   of `pointcount.py`: 133 mod 19^3, -155 mod 31^3 (runs N3: all columns mod p^3) and 134 mod 67^2.
+   of `pointcount.py`: 133 mod 19^3, -155 mod 31^3 and 134 mod 67^3 (runs N3: all columns mod p^3).
  * All entries outside H^3(T) (the complement classes) vanish; pole-m columns are divisible by p^(4-m).
 
 Result (`coset_analyze.py`, data in `data/`).  Hodge numbers (h30,h21,h12,h03): piece 1 (u = 1 mod 3) is
@@ -139,6 +139,22 @@ over Q(omega).  At p = 19 the slope-1 part has factors of degree 7 and the slope
 root of unity of degree 7 (17) over Q_19 has at least 28 (102) conjugates over Q(omega).  So W = 0 or all:
 H^3(T)^- is simple as a Q(omega)-motive, conditional on these (uncertified) numerics.
 Using only the total rank (no Hodge type) the twelve primes leave ranks 1, 6, 7, 16 and their complements.
+
+Second independent check.  kmehltretter82 posted eigen-traces a + b*zeta on V_zeta (thread 120, 2026-11-21):
+76+19z, -93-31z, -296-185z, 215+215z, -61-122z at p = 19, 31, 37, 43, 61.  Evaluated at the two cube roots of
+unity in Z_p they equal the traces of our two pieces: mod p^3 at p = 19, 31, 37 and mod p^2 at 43, 61.
+
+Number fields (`coset_analyze.py`, function `powers`).  A sub-Hodge structure of geometric origin is defined
+over some number field K, so it is only stable under Frob^f at a prime of residue degree f.  The Q_p-factor
+degrees of the characteristic polynomial of Frob^f are those of Frob unless sigma^k(alpha)/alpha is a root of
+unity for two distinct conjugate roots.  Write a unit root as alpha = teich * (1 + p*eps); then
+alpha^(p^d - 1) = 1 - p*eps mod p^2 and the ratio can only be a root of unity if eps mod p lies in a proper
+subfield of F_{p^d}.  From the runs N3 (Frob/p mod p^2, unit-root factors by one Hensel step) eps mod p
+generates F_{p^d} for every factor at p = 19, 37, 67 (both pieces), the primes used in the argument above; the
+detector does flag the control Phi_7(T/3).  Hence the argument holds for every power of Frobenius, and the
+conclusion is: no proper nonzero deck-stable sub-Hodge structure of geometric origin over any number field.
+The sub-structure in Robertboy18's degree-six argument comes from H^1 of a resolved surface, so it is of
+geometric origin; degree six is then excluded provided his bounds 44 and 36 hold (not checked here).
 
 Not done: the exact characteristic polynomial.  Recovering the coefficients in Z[omega] needs about ten
 digits of relative precision in both pieces (Newton-identity bounds: r1 + r2 > 16 + small for every k >= 16),
