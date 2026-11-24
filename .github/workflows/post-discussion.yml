@@ -8,7 +8,7 @@ on:
         required: true
         default: create
         type: choice
-        options: [create, reply, update, read, relink]
+        options: [create, reply, update, read, relink, thread]
       body_file:
         description: Path in this repository to the Markdown body
         required: true
@@ -100,6 +100,28 @@ jobs:
                 fi
                 grep -o 'https://[^) ]*' /tmp/new.md | sort -u >> "$out"
               done ;;
+            thread)
+              # recent comments of the discussion in discussion_node_id; target_id = ISO date lower bound (optional)
+              rc=0
+              gh api graphql -f id="$DISCUSSION_ID" -f query='
+              query($id: ID!) { node(id: $id) { ... on Discussion { title number comments(last: 40) { nodes {
+                id url createdAt lastEditedAt author { login } bodyText
+                replies(last: 30) { nodes { id url createdAt author { login } bodyText } } } } } } }' > /tmp/thread.json || rc=1
+              SINCE="${TARGET_ID:-2000-01-01}" python3 - >> "$out" <<'PY'
+          import json, os
+          d = json.load(open('/tmp/thread.json'))['data']['node']
+          since = os.environ['SINCE']
+          print('discussion', d['number'], d['title'])
+          def show(c, indent=''):
+              if c['createdAt'] < since and (c.get('lastEditedAt') or '') < since: return
+              a = (c['author'] or {}).get('login', '?')
+              print(f"{indent}--- {a} {c['createdAt'][:16]} {c['url'].split('#')[-1]} id={c['id']} len={len(c['bodyText'])}")
+              print(indent + c['bodyText'][:1100].replace('\n', ' '))
+          for c in d['comments']['nodes']:
+              show(c)
+              for r in c['replies']['nodes']: show(r, '    ')
+          PY
+              ;;
           esac
           echo "exit=$rc" >> "$out"
           echo "rc=$rc" >> "$GITHUB_OUTPUT"
