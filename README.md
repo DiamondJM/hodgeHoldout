@@ -75,8 +75,11 @@ Frobenius on the anti-invariant cohomology of the core threefold of `four-plus-t
 (`fourplustwo/frobenius/`, details in `fourplustwo/NOTES.md`): ToricControlledReduction was patched to work on
 one symmetry piece. At twelve primes Frobenius is ordinary, and the factor degrees exclude any proper
 Frobenius-compatible deck-stable sub-object. The exact characteristic polynomial was not obtained.
-`comment-fourplustwo-frobenius.md` is the draft note for discussion 120 (not posted yet);
-`attachments/coset-frobenius.zip` is the matching attachment.
+Posted on 2026-11-24 as replies to `Robertboy18`'s degree-six comment (node `DC_kwDOVLOOJc4BLqoY`) in discussion
+120: the note `comment-fourplustwo-frobenius.md` (node `DC_kwDOVLOOJc4BLznP`, discussioncomment-19872207) and,
+under it, the code inline (`comment-fourplustwo-frobenius-code.md`), because comment attachments cannot be
+uploaded through the API. `attachments/coset-frobenius.zip` holds the same code plus the output data and can
+still be attached by hand.
 
 Pending by hand: the solver note on the cycle-q2 thread (node `DC_kwDOVLOOJc4BKauq`) still says its scripts are
 available on request. `attachments/cycle-tangent-solver.zip` is ready to attach to that comment in the browser.
